@@ -1,35 +1,35 @@
 {
-  "description": "A foundation for scalable desktop apps",
+  "name": "structuraid-desktop",
+  "description": "The tool to use when designing structures",
   "keywords": [
-    "electron",
-    "boilerplate",
-    "react",
-    "typescript",
-    "ts",
-    "sass",
-    "webpack",
-    "hot",
-    "reload"
+    "structures",
+    "design",
+    "foundations",
+    "engineering"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/PradaIng/structuraid-desktop",
   "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
+    "url": "https://github.com/PradaIng/structuraid-desktop/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "git+https://github.com/PradaIng/structuraid-desktop.git"
   },
   "license": "MIT",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
+    "name": "PradaIng Engineering Team",
+    "email": "engineering@pradic.co"
   },
   "contributors": [
     {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
+      "name": "Miguel Prada",
+      "email": "im.mprada@gmail.com",
+      "url": "https://github.com/immprada"
+    },
+    {
+      "name": "Miguel Prada",
+      "email": "mapra99@gmail.com",
+      "url": "https://github.com/mapra99"
     }
   ],
   "main": "./src/main/main.ts",
@@ -139,19 +139,19 @@
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
     "detect-port": "^1.3.0",
-    "electron": "^20.0.2",
-    "electron-builder": "^23.3.3",
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0",
     "electron-devtools-installer": "^3.2.0",
     "electron-notarize": "^1.2.1",
     "electron-rebuild": "^3.2.9",
     "electronmon": "^2.0.2",
     "eslint": "^8.22.0",
-    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-erb": "^4.0.3",
     "eslint-import-resolver-typescript": "^3.4.1",
     "eslint-import-resolver-webpack": "^0.13.2",
     "eslint-plugin-compat": "^4.0.2",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.24.1",
     "eslint-plugin-jest": "^26.8.3",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-promise": "^6.0.0",
@@ -185,8 +185,8 @@
     "webpack-merge": "^5.8.0"
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "Structuraid Desktop",
+    "appId": "org.pradaing.Structuraid Desktop",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
@@ -244,12 +244,9 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "PradaIng",
+      "repo": "structuraid-desktop"
     }
-  },
-  "collective": {
-    "url": "https://opencollective.com/electron-react-boilerplate-594"
   },
   "devEngines": {
     "node": ">=14.x",
