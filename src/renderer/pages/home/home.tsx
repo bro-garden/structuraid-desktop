@@ -1,12 +1,10 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
-import './App.css';
+import ElectronIcon from '../../../../assets/icon.svg';
 
-const Hello = () => {
+const Home = () => {
   return (
     <div>
       <div className="Hello">
-        <img width="200" alt="icon" src={icon} />
+        <img width="200" alt="icon" src={ElectronIcon} />
       </div>
       <h1 className="font-bold text-blue-500">electron-react-boilerplate</h1>
       <div className="Hello">
@@ -39,12 +37,4 @@ const Hello = () => {
   );
 };
 
-export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
-    </Router>
-  );
-}
+export default Home;
