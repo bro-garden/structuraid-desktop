@@ -1,37 +1,19 @@
-import ElectronIcon from '../../../../assets/icon.svg';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../constants';
 
 const Home = () => {
   return (
-    <div>
-      <div className="Hello">
-        <img width="200" alt="icon" src={ElectronIcon} />
-      </div>
-      <h1 className="font-bold text-blue-500">electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
+    <div className="p-20 flex flex-col justify-center min-h-screen">
+      <h1 className="font-bold text-blue-500 text-6xl mb-6">
+        Welcome to Structuraid
+      </h1>
+      <div className="flex flex-col gap-4">
+        <Link
+          to={ROUTES.MODELLING_UI_POC}
+          className="font-bold text-xl hover:text-blue-500 transition-all"
         >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="folded hands">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
+          Three.js PoC
+        </Link>
       </div>
     </div>
   );
