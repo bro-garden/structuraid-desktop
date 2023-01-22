@@ -9,7 +9,7 @@ const Home = () => {
       </h1>
       <div className="flex flex-col gap-4">
         <Link
-          to={ROUTES.MODELLING_UI_POC}
+          to={ROUTES.MODELLING_UI_POC.ROOT}
           className="font-bold text-xl hover:text-blue-500 transition-all"
         >
           Three.js PoC
