@@ -1,11 +1,11 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import { ROUTES } from '../../constants';
-import { Home, ModellingUiPoc } from '../../pages';
+import { ROUTES } from 'renderer/constants';
+import { Home, ModellingUiPoc } from 'renderer/pages';
 import {
   SimpleCube,
   DrawingLines,
   ProceduralText,
-} from '../../pages/modelling-ui-poc';
+} from 'renderer/pages/modelling-ui-poc';
 
 const AppRouter = () => {
   return (
