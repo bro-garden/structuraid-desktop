@@ -13,6 +13,13 @@ const ModellingUiPoc = () => {
         >
           Simple Cube
         </Link>
+
+        <Link
+          to={ROUTES.MODELLING_UI_POC.DRAWING_LINES}
+          className="font-bold text-xl hover:text-blue-500 transition-all"
+        >
+          Drawing Lines
+        </Link>
       </ul>
     </div>
   );
