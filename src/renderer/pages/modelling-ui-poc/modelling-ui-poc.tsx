@@ -20,6 +20,13 @@ const ModellingUiPoc = () => {
         >
           Drawing Lines
         </Link>
+
+        <Link
+          to={ROUTES.MODELLING_UI_POC.PROCEDURAL_TEXT}
+          className="font-bold text-xl hover:text-blue-500 transition-all"
+        >
+          Procedural Text
+        </Link>
       </ul>
     </div>
   );
