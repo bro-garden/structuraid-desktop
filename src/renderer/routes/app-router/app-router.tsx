@@ -5,6 +5,7 @@ import {
   SimpleCube,
   DrawingLines,
   ProceduralText,
+  GridSystem,
 } from 'renderer/pages/modelling-ui-poc';
 
 const AppRouter = () => {
@@ -27,6 +28,10 @@ const AppRouter = () => {
         <Route
           path={ROUTES.MODELLING_UI_POC.PROCEDURAL_TEXT}
           element={<ProceduralText />}
+        />
+        <Route
+          path={ROUTES.MODELLING_UI_POC.GRID_SYSTEM}
+          element={<GridSystem />}
         />
       </Routes>
     </Router>
