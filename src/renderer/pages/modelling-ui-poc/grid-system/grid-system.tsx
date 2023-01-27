@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { WebGLRenderer, PerspectiveCamera, Scene, Color } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import invariant from 'tiny-invariant';
-import { UCS } from 'renderer/three/components';
+import { UCS, InfiniteGrid } from 'renderer/three/components';
 import { CSS3DRenderer } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import { COLORS } from 'renderer/constants';
 
@@ -51,8 +51,10 @@ const GridSystem = () => {
       camera,
       containerEl: cssContainerEl,
     });
+    const grid = new InfiniteGrid(10, 10, new Color(COLORS.DARK), 5000, 'xyz');
 
     scene.add(ucs.object3d);
+    scene.add(grid);
 
     function animate() {
       requestAnimationFrame(animate);
