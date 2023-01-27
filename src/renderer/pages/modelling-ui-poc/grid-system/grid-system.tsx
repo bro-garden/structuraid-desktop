@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
-import { WebGLRenderer, PerspectiveCamera, Scene } from 'three';
+import { WebGLRenderer, PerspectiveCamera, Scene, Color } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import invariant from 'tiny-invariant';
 import { UCS } from 'renderer/three/components';
 import { CSS3DRenderer } from 'three/examples/jsm/renderers/CSS3DRenderer';
+import { COLORS } from 'renderer/constants';
 
 const GridSystem = () => {
   useEffect(() => {
@@ -45,6 +46,7 @@ const GridSystem = () => {
     cssControls.update();
 
     const scene = new Scene();
+    scene.background = new Color(COLORS.BLACK);
     const ucs = new UCS({
       camera,
       containerEl: cssContainerEl,
@@ -71,8 +73,8 @@ const GridSystem = () => {
       <h1 className="font-bold text-blue-500 text-6xl mb-6">Grid System</h1>
 
       <div className="canvas-wrapper h-screen relative">
-        <div className="css-wrapper w-full h-screen absolute left-0 top-0" />
-        <div className="webgl-wrapper w-full h-screen absolute left-0 top-0" />
+        <div className="css-wrapper w-full h-screen absolute left-0 top-0 z-10" />
+        <div className="webgl-wrapper w-full h-screen absolute left-0 top-0 z-0" />
       </div>
     </div>
   );
