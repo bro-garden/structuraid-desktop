@@ -2,8 +2,8 @@ import { Vector3, BufferGeometry, Line, LineBasicMaterial, Group } from 'three';
 import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import { COLORS } from 'renderer/constants';
 
-import type { Object3D } from 'three';
-import type { XAxisOptions } from './types';
+import type { Object3D, Camera } from 'three';
+import type { XAxisOptions, XAxisUpdateOptions } from './types';
 
 class XAxis {
   public length: number;
@@ -16,32 +16,53 @@ class XAxis {
 
   public containerEl: Element;
 
-  constructor({ containerEl, length = 10 }: XAxisOptions) {
+  #line: Line;
+
+  #label: CSS3DObject;
+
+  constructor({ camera, containerEl, length = 10 }: XAxisOptions) {
     this.length = length;
     this.geometry = XAxis.#buildGeometry(length);
     this.material = XAxis.#buildMaterial();
     this.containerEl = containerEl;
 
+    this.#line = this.#buildLine();
+    this.#label = this.#buildLabel(camera);
     this.object3D = this.#build3DObject();
   }
 
-  #build3DObject() {
-    const group = new Group();
-    const line = new Line(this.geometry, this.material);
-    group.add(line);
+  update({ camera }: XAxisUpdateOptions) {
+    this.#label.lookAt(camera.position.x, camera.position.y, camera.position.z);
+  }
 
+  #buildLine() {
+    const line = new Line(this.geometry, this.material);
+    return line;
+  }
+
+  #buildLabel(camera: Camera) {
     const labelEl = document.createElement('div');
     labelEl.style.fontSize = '0.3rem';
     labelEl.style.color = COLORS.RED;
     labelEl.textContent = 'x';
+
     this.containerEl.appendChild(labelEl);
+
     const labelObject = new CSS3DObject(labelEl);
     labelObject.position.x = this.length + 2;
     labelObject.position.y = 0;
     labelObject.position.z = 0;
-    labelObject.rotation.x = Math.PI / 2;
 
-    group.add(labelObject);
+    labelObject.lookAt(camera.position.x, camera.position.y, camera.position.z);
+
+    return labelObject;
+  }
+
+  #build3DObject() {
+    const group = new Group();
+
+    group.add(this.#line);
+    group.add(this.#label);
 
     return group;
   }

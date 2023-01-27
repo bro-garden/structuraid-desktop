@@ -30,7 +30,7 @@ const GridSystem = () => {
     cssContainerEl.appendChild(cssRenderer.domElement);
 
     const camera = new PerspectiveCamera(
-      45,
+      75,
       webglContainerEl.clientWidth / webglContainerEl.clientHeight,
       0.001,
       1000
@@ -46,6 +46,7 @@ const GridSystem = () => {
 
     const scene = new Scene();
     const ucs = new UCS({
+      camera,
       containerEl: cssContainerEl,
     });
 
@@ -53,8 +54,12 @@ const GridSystem = () => {
 
     function animate() {
       requestAnimationFrame(animate);
+
       controls.update();
       cssControls.update();
+
+      ucs.update({ camera });
+
       cssRenderer.render(scene, camera);
       renderer.render(scene, camera);
     }
