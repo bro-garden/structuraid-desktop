@@ -31,12 +31,15 @@ class XAxis {
     group.add(line);
 
     const labelEl = document.createElement('div');
-    labelEl.textContent = 'X';
+    labelEl.style.fontSize = '0.3rem';
+    labelEl.style.color = COLORS.RED;
+    labelEl.textContent = 'x';
     this.containerEl.appendChild(labelEl);
     const labelObject = new CSS3DObject(labelEl);
-    labelObject.position.x = this.length;
+    labelObject.position.x = this.length + 2;
     labelObject.position.y = 0;
     labelObject.position.z = 0;
+    labelObject.rotation.x = Math.PI / 2;
 
     group.add(labelObject);
 
