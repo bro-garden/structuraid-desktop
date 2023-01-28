@@ -5,3 +5,4 @@ export { default as SimpleCube } from './simple-cube';
 export { default as DrawingLines } from './drawing-lines';
 export { default as ProceduralText } from './procedural-text';
 export { default as GridSystem } from './grid-system';
+export { default as Ucs } from './ucs';

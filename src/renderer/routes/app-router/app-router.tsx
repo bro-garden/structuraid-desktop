@@ -6,6 +6,7 @@ import {
   DrawingLines,
   ProceduralText,
   GridSystem,
+  Ucs,
 } from 'renderer/pages/modelling-ui-poc';
 
 const AppRouter = () => {
@@ -29,6 +30,7 @@ const AppRouter = () => {
           path={ROUTES.MODELLING_UI_POC.PROCEDURAL_TEXT}
           element={<ProceduralText />}
         />
+        <Route path={ROUTES.MODELLING_UI_POC.UCS} element={<Ucs />} />
         <Route
           path={ROUTES.MODELLING_UI_POC.GRID_SYSTEM}
           element={<GridSystem />}

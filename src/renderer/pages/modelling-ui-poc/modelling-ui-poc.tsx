@@ -29,6 +29,13 @@ const ModellingUiPoc = () => {
         </Link>
 
         <Link
+          to={ROUTES.MODELLING_UI_POC.UCS}
+          className="font-bold text-xl hover:text-blue-500 transition-all"
+        >
+          UCS
+        </Link>
+
+        <Link
           to={ROUTES.MODELLING_UI_POC.GRID_SYSTEM}
           className="font-bold text-xl hover:text-blue-500 transition-all"
         >

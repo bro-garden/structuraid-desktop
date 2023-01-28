@@ -2,11 +2,10 @@ import { useEffect } from 'react';
 import { WebGLRenderer, PerspectiveCamera, Scene, Color } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import invariant from 'tiny-invariant';
-import { UCS, InfiniteGrid } from 'renderer/three/components';
+import { UCS } from 'renderer/three/components';
 import { CSS3DRenderer } from 'three/examples/jsm/renderers/CSS3DRenderer';
-import { COLORS } from 'renderer/constants';
 
-const GridSystem = () => {
+const Ucs = () => {
   useEffect(() => {
     const webglContainerEl = document.querySelector('.webgl-wrapper');
     invariant(webglContainerEl, 'could not find container tag');
@@ -46,22 +45,20 @@ const GridSystem = () => {
     cssControls.update();
 
     const scene = new Scene();
-    scene.background = new Color(COLORS.BLACK);
-
-    const grid = new InfiniteGrid({
-      spacingX: 10,
-      spacingY: 10,
-      color: new Color(COLORS.DARK),
-      distance: 1000,
+    const ucs = new UCS({
+      camera,
+      containerEl: cssContainerEl,
     });
 
-    scene.add(grid);
+    scene.add(ucs.object3d);
 
     function animate() {
       requestAnimationFrame(animate);
 
       controls.update();
       cssControls.update();
+
+      ucs.update({ camera });
 
       cssRenderer.render(scene, camera);
       renderer.render(scene, camera);
@@ -81,4 +78,4 @@ const GridSystem = () => {
   );
 };
 
-export default GridSystem;
+export default Ucs;
