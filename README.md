@@ -50,7 +50,7 @@ npm run package
 
 ## Docs
 
-See our [docs and guides here](https://loud-liver-0fa.notion.site/StructurAid-c892a663475d41f2a0e4a037de220de5)
+See our [docs and guides here](https://pradaing.notion.site/StructurAid-c892a663475d41f2a0e4a037de220de5)
 
 ## License
 
