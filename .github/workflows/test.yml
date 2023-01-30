@@ -23,17 +23,21 @@ jobs:
       - name: install dependencies
         run: |
           npm install --save-dev
+          npm run package
+          npm run lint
+          npm exec tsc
+          npm test
 
-      - name: package
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run package
+      # - name: package
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: npm run package
 
-      - name: linter
-        run: npm run lint
+      # - name: linter
+      #   run: npm run lint
 
-      - name: ts checks
-        run: npm exec tsc
+      # - name: ts checks
+      #   run: npm exec tsc
 
-      - name: run tests
-        run: npm test
+      # - name: run tests
+      #   run: npm test
