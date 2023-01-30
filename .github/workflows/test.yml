@@ -21,27 +21,35 @@ jobs:
           cache: npm
 
       - name: install dependencies
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm install --save-dev
-          npm run build:main
-          npm run build:renderer
-          npm test
-        # npm run package
-        # npm run lint
-        # npm exec tsc
+        run: npm install --save-dev
 
-      # - name: package
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: npm run package
+      - name: build
+        run: npm run build
 
-      # - name: linter
-      #   run: npm run lint
+      - name: test
+        run: npm test
 
-      # - name: ts checks
-      #   run: npm exec tsc
+  linter:
+    runs-on: ${{matrix.os}}
 
-      # - name: run tests
-      #   run: npm test
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+
+    steps:
+      - name: linter
+        run: npm run lint
+
+      - name: ts checks
+        run: npm exec tsc
+
+  package:
+    runs-on: ${{matrix.os}}
+
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+
+    steps:
+      - name: package
+        run: npm run package
