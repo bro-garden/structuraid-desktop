@@ -22,7 +22,7 @@ jobs:
 
       - name: install dependencies
         run: |
-          npm install --save-dev
+          npm install
           npm run package
           npm run lint
           npm exec tsc
