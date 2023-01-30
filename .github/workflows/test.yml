@@ -25,6 +25,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install --save-dev
+          npm run build:main
+          npm run build:renderer
           npm test
         # npm run package
         # npm run lint
