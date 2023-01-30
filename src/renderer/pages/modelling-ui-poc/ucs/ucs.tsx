@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { WebGLRenderer, PerspectiveCamera, Scene, Color } from 'three';
+import { WebGLRenderer, PerspectiveCamera, Scene } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import invariant from 'tiny-invariant';
 import { UCS } from 'renderer/three/components';
