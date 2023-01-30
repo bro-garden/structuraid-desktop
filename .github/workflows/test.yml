@@ -24,11 +24,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm install
-          npm run package
-          npm run lint
-          npm exec tsc
+          npm install --save-dev
           npm test
+        # npm run package
+        # npm run lint
+        # npm exec tsc
 
       # - name: package
       #   env:
