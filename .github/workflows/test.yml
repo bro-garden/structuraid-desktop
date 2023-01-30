@@ -22,7 +22,7 @@ jobs:
 
       - name: install dependencies
         run: |
-          npm ci
+          npm install --save-dev
 
       - name: package
         env:
