@@ -193,3 +193,122 @@ We have to font sizes for body:
     {Template.bind({})}
   </Story>
 </Canvas>
+
+
+## Colors
+
+Modofying `useColor` prop we can change the color of the Text, available options:
+
+- `primary` (by default)
+
+<Canvas>
+  <Story
+    name="text_colors_primary"
+    args={{
+      as: "body",
+      variant: "regular",
+      useColor: "primary",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `secondary`
+
+<Canvas>
+  <Story
+    name="text_colors_secondary"
+    args={{
+      as: "body",
+      variant: "regular",
+      useColor: "secondary",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `blueWhite`
+
+<Canvas>
+  <Story
+    name="text_colors_blueWhite"
+    args={{
+      as: "body",
+      variant: "regular",
+      useColor: "blueWhite",
+      children: "add to footing group | add to footing family"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `redWhite`
+
+<Canvas>
+  <Story
+    name="text_colors_redWhite"
+    args={{
+      as: "body",
+      variant: "regular",
+      useColor: "redWhite",
+      children: "designed by: John Doe"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `warning`
+
+<Canvas>
+  <Story
+    name="text_colors_warning"
+    args={{
+      as: "body",
+      variant: "regular",
+      useColor: "warning",
+      children: "footing pressure exceeds limit of the foundation by 2%"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `error`
+
+<Canvas>
+  <Story
+    name="text_colors_error"
+    args={{
+      as: "body",
+      variant: "regular",
+      useColor: "error",
+      children: "footing pressure not acceptable by foundation capacity"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `success`
+
+<Canvas>
+  <Story
+    name="text_colors_success"
+    args={{
+      as: "body",
+      variant: "regular",
+      useColor: "success",
+      children: "dxf successfully loaded | design scenarios successfully checked"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
