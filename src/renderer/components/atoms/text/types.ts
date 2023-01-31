@@ -15,6 +15,7 @@ export interface TextProps {
   variant: TextVariant;
   className?: string;
   children: ReactNode;
+  useColor?: string;
 }
 
 export interface DefaultTags {

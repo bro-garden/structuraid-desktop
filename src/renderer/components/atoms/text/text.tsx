@@ -62,12 +62,44 @@ const resolveElement = (as: TextUsage): TextTag => {
   return 'p' || DEFAULT_TAGS[as];
 };
 
-const Text = ({ as, variant, className, children }: TextProps) => {
+const returnTextColor = (useColor: string): string => {
+  switch (useColor) {
+    case 'primary': {
+      return 'text-primary';
+    }
+    case 'secondary': {
+      return 'text-secondary';
+    }
+    case 'blueWhite': {
+      return 'text-blueWhite';
+    }
+    case 'redWhite': {
+      return 'text-redWhite';
+    }
+    case 'error': {
+      return 'text-error';
+    }
+    case 'warning': {
+      return 'text-warning';
+    }
+    case 'success': {
+      return 'text-success';
+    }
+    default: {
+      return 'text-primary';
+    }
+  }
+};
+
+const Text = ({ as, variant, useColor, className, children }: TextProps) => {
   const Element = resolveElement(as);
   const styles = buildStylesFor(variant, as);
+  const textColor = returnTextColor(useColor || '');
 
   return (
-    <Element className={`${styles} ${className || ''}`}>{children}</Element>
+    <Element className={`${styles} ${textColor} ${className || ''}`}>
+      {children}
+    </Element>
   );
 };
 
