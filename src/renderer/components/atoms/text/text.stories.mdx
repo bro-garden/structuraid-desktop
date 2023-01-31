@@ -10,14 +10,184 @@ export const Template = (args) => <Text {...args} />;
 
 # Text
 
-With `MDX`, we can define a story for `Text` right in the middle of our
-Markdown documentation.
+This is `Text` atom, used to insert text in our software. 
+We have six types of text, indicated by `as` prop;
+and could be bold or regular depending on `variant` prop
+
+
+## Titles
+
+`as = 'big-title'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="Unchecked s"
+    name="big-title_bold"
     args={{
-      x: "sm",
+      as: "big-title",
+      variant: "bold",
+      children: "structuraid"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="big-title_regular"
+    args={{
+      as: "big-title",
+      variant: "regular",
+      children: "PIP: Lago alto"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+`as = 'title'` use this on titles
+
+<Canvas>
+  <Story
+    name="title_bold"
+    args={{
+      as: "title",
+      variant: "bold",
+      children: "foundation blueprint"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="title_regular"
+    args={{
+      as: "title",
+      variant: "regular",
+      children: "foundation blueprint"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+`as = 'section-title'` use this on section titles
+
+<Canvas>
+  <Story
+    name="section-title_bold"
+    args={{
+      as: "section-title",
+      variant: "bold",
+      children: "RC footing design"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="section-title_regular"
+    args={{
+      as: "section-title",
+      variant: "regular",
+      children: "RC footing design"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+`as = 'sub-title'` use this on section subtitles
+
+<Canvas>
+  <Story
+    name="sub-title_bold"
+    args={{
+      as: "sub-title",
+      variant: "bold",
+      children: "one-way shear | two-ways shear | bending reinforcement"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="sub-title_regular"
+    args={{
+      as: "sub-title",
+      variant: "regular",
+      children: "one-way shear | two-ways shear | bending reinforcement"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+
+## Body
+
+We have to font sizes for body:
+
+`as = 'body'` use on content
+
+<Canvas>
+  <Story
+    name="body_bold"
+    args={{
+      as: "body",
+      variant: "bold",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="body_regular"
+    args={{
+      as: "body",
+      variant: "regular",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+`as = 'body-small'` use on content
+
+<Canvas>
+  <Story
+    name="body-small_bold"
+    args={{
+      as: "body-small",
+      variant: "bold",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="body-small_regular"
+    args={{
+      as: "body-small",
+      variant: "regular",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
     }}
   >
     {Template.bind({})}
