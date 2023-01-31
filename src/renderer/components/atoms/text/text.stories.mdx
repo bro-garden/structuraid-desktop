@@ -1,0 +1,25 @@
+<!-- Text.stories.mdx -->
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Text from './text';
+
+<Meta title="MDX/Text" component={Text} />
+
+export const Template = (args) => <Text {...args} />;
+
+# Text
+
+With `MDX`, we can define a story for `Text` right in the middle of our
+Markdown documentation.
+
+<Canvas>
+  <Story
+    name="Unchecked s"
+    args={{
+      x: "sm",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
