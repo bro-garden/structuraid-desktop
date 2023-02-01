@@ -12,7 +12,6 @@ export default {
   DARK_RED: '#48070D',
   LIGHT_RED: '#AE6D73',
   WHITE_RED: '#F3DEE0',
-  redWhite: '#F3DEE0',
   WARNING: '#EED202',
   ERROR: '#E3342F',
   SUCCESS: '#2FB390',
