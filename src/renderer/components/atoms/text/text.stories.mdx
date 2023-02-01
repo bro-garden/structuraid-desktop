@@ -12,9 +12,8 @@ export const Template = (args) => <Text {...args} />;
 
 # Text - interface
 
-This is `Text` atom, used to insert text in our software. 
-We have six types of interface's text, indicated by `as` prop;
-and could be bold or regular depending on `variant` prop
+This is `Text` atom, used to insert text in our software UI. 
+We have 6 types of interface's text, indicated by `as` prop:
 
 - `big-title`
 - `typical-title`
@@ -23,6 +22,11 @@ and could be bold or regular depending on `variant` prop
 - `content-body`
 - `body-small`
 
+And could be bold or normal depending on `variant` prop:
+
+- `bold`
+- `normal`
+
 
 ## Titles
 
@@ -30,290 +34,206 @@ and could be bold or regular depending on `variant` prop
 
 <Canvas>
   <Story
-    name="big-title_bold"
+    name="big-title"
     args={{
       as: "big-title",
       variant: "bold",
-      children: "structuraid"
+      children: "welcome to structuraid",
+      useColor: "primary"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<Canvas>
-  <Story
-    name="big-title_regular"
-    args={{
-      as: "big-title",
-      variant: "regular",
-      children: "PIP: Lago alto"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-
-`as = 'title'` use this on titles
+`as = 'typical-title'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="title_bold"
+    name="typical-title"
     args={{
-      as: "title",
+      as: "typical-title",
       variant: "bold",
-      children: "foundation blueprint"
+      children: "PIP: lago alto",
+      useColor: "secondary"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<Canvas>
-  <Story
-    name="title_regular"
-    args={{
-      as: "title",
-      variant: "regular",
-      children: "foundation blueprint"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-
-`as = 'section-title'` use this on section titles
+`as = 'section-title'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="section-title_bold"
+    name="section-title"
     args={{
       as: "section-title",
-      variant: "bold",
-      children: "RC footing design"
+      variant: "normal",
+      children: "PIP: lago alto",
+      useColor: "secondary"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<Canvas>
-  <Story
-    name="section-title_regular"
-    args={{
-      as: "section-title",
-      variant: "regular",
-      children: "RC footing design"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-
-`as = 'sub-title'` use this on section subtitles
+`as = 'sub-title'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="sub-title_bold"
+    name="sub-title"
     args={{
       as: "sub-title",
-      variant: "bold",
-      children: "one-way shear | two-ways shear | bending reinforcement"
+      variant: "normal",
+      children: "PIP: lago alto",
+      useColor: "secondary"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
-
-<Canvas>
-  <Story
-    name="sub-title_regular"
-    args={{
-      as: "sub-title",
-      variant: "regular",
-      children: "one-way shear | two-ways shear | bending reinforcement"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-
 
 ## Body
 
-We have to font sizes for body:
+text to use in the content of the UI of structuraid.
 
-`as = 'body'` use on content
+`as = 'content-body'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="body_bold"
+    name="content-body"
     args={{
-      as: "body",
-      variant: "bold",
-      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
+      as: "content-body",
+      variant: "normal",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
+      useColor: "secondary"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<Canvas>
-  <Story
-    name="body_regular"
-    args={{
-      as: "body",
-      variant: "regular",
-      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-`as = 'body-small'` use on content
+`as = 'body-small'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="body-small_bold"
+    name="body-small"
     args={{
       as: "body-small",
-      variant: "bold",
-      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
+      variant: "normal",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
+      useColor: "secondary"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
-
-<Canvas>
-  <Story
-    name="body-small_regular"
-    args={{
-      as: "body-small",
-      variant: "regular",
-      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
 
 ## Colors
 
-By modifying the `useColor` prop we can change the color of the Text, available options:
+Depending on `useColor`prop, we have:
 
-- `primary` (by default)
-
-<Canvas>
-  <Story
-    name="text_colors_primary"
-    args={{
-      as: "body",
-      variant: "regular",
-      useColor: "primary",
-      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
+- `primary`
 - `secondary`
-
-<Canvas>
-  <Story
-    name="text_colors_secondary"
-    args={{
-      as: "body",
-      variant: "regular",
-      useColor: "secondary",
-      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
 - `blueWhite`
-
-<Canvas>
-  <Story
-    name="text_colors_blueWhite"
-    args={{
-      as: "body",
-      variant: "regular",
-      useColor: "blueWhite",
-      children: "add to footing group | add to footing family"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
 - `redWhite`
-
-<Canvas>
-  <Story
-    name="text_colors_redWhite"
-    args={{
-      as: "body",
-      variant: "regular",
-      useColor: "redWhite",
-      children: "designed by: John Doe"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
 - `warning`
-
-<Canvas>
-  <Story
-    name="text_colors_warning"
-    args={{
-      as: "body",
-      variant: "regular",
-      useColor: "warning",
-      children: "footing pressure exceeds limit of the foundation by 2%"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
 - `error`
-
-<Canvas>
-  <Story
-    name="text_colors_error"
-    args={{
-      as: "body",
-      variant: "regular",
-      useColor: "error",
-      children: "footing pressure not acceptable by foundation capacity"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
 - `success`
 
 <Canvas>
   <Story
-    name="text_colors_success"
+    name="body-small-color-primary"
     args={{
-      as: "body",
-      variant: "regular",
-      useColor: "success",
-      children: "dxf successfully loaded | design scenarios successfully checked"
+      as: "body-small",
+      variant: "normal",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
+      useColor: "primary"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="body-small-color-secondary"
+    args={{
+      as: "body-small",
+      variant: "normal",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
+      useColor: "secondary"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="body-small-color-blueWhite"
+    args={{
+      as: "body-small",
+      variant: "normal",
+      children: "Footing type A schema",
+      useColor: "blueWhite"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="body-small-color-redWhite"
+    args={{
+      as: "body-small",
+      variant: "bold",
+      children: "Footing type A schema",
+      useColor: "redWhite"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="body-small-color-warning"
+    args={{
+      as: "body-small",
+      variant: "normal",
+      children: "Footing pressure is 2% great than foundation's limit",
+      useColor: "warning"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="body-small-color-error"
+    args={{
+      as: "body-small",
+      variant: "normal",
+      children: "Footing pressure exceeds limit of foundation",
+      useColor: "error"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="body-small-color-success"
+    args={{
+      as: "body-small",
+      variant: "normal",
+      children: "DXF succesfully loaded",
+      useColor: "success"
     }}
   >
     {Template.bind({})}
@@ -322,30 +242,110 @@ By modifying the `useColor` prop we can change the color of the Text, available 
 
  ---
 
-# Text - documents
+# Text - documentation
 
-This is `Text` atom, used to insert text in our software. 
-We have seven types of documents's text, indicated by `variant` prop.
-We build a document'stext component with null `as` and `useColor`
+This is `Text` atom, used to generate pdf for memories. 
+We have 8 types of interface's text, indicated by `as` prop:
 
 - `title`
-- `chapter-title`
-- `chapter-sub-title`
+- `chapter`
+- `chapter-section'`
+- `content-title`
 - `content`
 - `content-small`
 - `error`
-- `warning`
-
-## Titles
-
-`variant = 'title'` use this on the software and project titles
+- `quote`
 
 <Canvas>
   <Story
-    name="document_title"
+    name="title"
     args={{
-      variant: "title",
-      children: "structuraid"
+      as: "title",
+      children: "PIP: Lago alto | structural design memories"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="chapter"
+    args={{
+      as: "chapter",
+      children: "Footing design"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="chapter-section"
+    args={{
+      as: "chapter-section",
+      children: "Footing type 1"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="content-title"
+    args={{
+      as: "content-title",
+      children: "One-way shear check | Two-ways shear check | Bending reinforcement"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="content"
+    args={{
+      as: "content",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="content-small"
+    args={{
+      as: "content-small",
+      children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="error"
+    args={{
+      as: "error",
+      children: "shear checks failled"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="quote"
+    args={{
+      as: "quote",
+      children: "Once the area is determined, a factored soil pressure is obtained by dividing the factored load, Pu= 1.2D + 1.6L, by the area of the footing. This is required to design the footing by the strength design method."
     }}
   >
     {Template.bind({})}
