@@ -15,27 +15,27 @@ const buildStylesForInterface = (
   }
 
   switch (as) {
-    case 'big-title': {
+    case 'heading-1-interface': {
       styles = styles.concat(['text-4xl']);
       break;
     }
-    case 'typical-title': {
+    case 'heading-2-interface': {
       styles = styles.concat(['text-3xl']);
       break;
     }
-    case 'section-title': {
+    case 'heading-3-interface': {
       styles = styles.concat(['text-2xl']);
       break;
     }
-    case 'sub-title': {
+    case 'heading-4-interface': {
       styles = styles.concat(['text-l']);
       break;
     }
-    case 'content-body': {
+    case 'body-interface': {
       styles = styles.concat(['text-s']);
       break;
     }
-    case 'body-small': {
+    case 'body-small-interface': {
       styles = styles.concat(['text-xs']);
       break;
     }

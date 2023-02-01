@@ -4,7 +4,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
   let styles = ['font-serif'];
 
   switch (as) {
-    case 'title': {
+    case 'heading-1-document': {
       styles = styles.concat(
         ['text-print-xl'],
         ['font-bold'],
@@ -12,7 +12,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
       );
       break;
     }
-    case 'chapter': {
+    case 'heading-2-document': {
       styles = styles.concat(
         ['text-print-l'],
         ['font-bold'],
@@ -20,7 +20,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
       );
       break;
     }
-    case 'chapter-section': {
+    case 'heading-3-document': {
       styles = styles.concat(
         ['text-print-l'],
         ['font-normal'],
@@ -28,7 +28,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
       );
       break;
     }
-    case 'content-title': {
+    case 'heading-4-document': {
       styles = styles.concat(
         ['text-print-sm'],
         ['font-bold'],
@@ -36,7 +36,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
       );
       break;
     }
-    case 'content': {
+    case 'body-document': {
       styles = styles.concat(
         ['text-print-sm'],
         ['font-normal'],
@@ -44,7 +44,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
       );
       break;
     }
-    case 'content-small': {
+    case 'body-small-document': {
       styles = styles.concat(
         ['text-print-xs'],
         ['font-normal'],
@@ -52,7 +52,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
       );
       break;
     }
-    case 'error': {
+    case 'error-document': {
       styles = styles.concat(
         ['text-print-sm'],
         ['font-normal'],
@@ -60,7 +60,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
       );
       break;
     }
-    case 'quote': {
+    case 'quote-document': {
       styles = styles.concat(
         ['text-print-sm'],
         ['font-normal'],

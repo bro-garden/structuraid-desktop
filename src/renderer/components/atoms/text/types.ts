@@ -2,20 +2,20 @@ import type { ReactNode } from 'react';
 
 export type TextTag = 'h1' | 'h2' | 'h3' | 'h4' | 'span' | 'p';
 export type TextUsage =
-  | 'big-title'
-  | 'typical-title'
-  | 'section-title'
-  | 'sub-title'
-  | 'content-body'
-  | 'body-small'
-  | 'title'
-  | 'chapter'
-  | 'chapter-section'
-  | 'content-title'
-  | 'content'
-  | 'content-small'
-  | 'error'
-  | 'quote';
+  | 'heading-1-interface'
+  | 'heading-2-interface'
+  | 'heading-3-interface'
+  | 'heading-4-interface'
+  | 'body-interface'
+  | 'body-small-interface'
+  | 'heading-1-document'
+  | 'heading-2-document'
+  | 'heading-3-document'
+  | 'heading-4-document'
+  | 'body-document'
+  | 'body-small-document'
+  | 'error-document'
+  | 'quote-document';
 export type TextVariant = 'bold' | 'normal' | 'italic' | '';
 export type TextColor =
   | 'primary'
@@ -36,18 +36,18 @@ export interface TextProps {
 }
 
 export interface DefaultTags {
-  'big-title': TextTag;
-  'typical-title': TextTag;
-  'section-title': TextTag;
-  'sub-title': TextTag;
-  'content-body': TextTag;
-  'body-small': TextTag;
-  title: TextTag;
-  chapter: TextTag;
-  'chapter-section': TextTag;
-  'content-title': TextTag;
-  content: TextTag;
-  'content-small': TextTag;
-  error: TextTag;
-  quote: TextTag;
+  'heading-1-interface': TextTag;
+  'heading-2-interface': TextTag;
+  'heading-3-interface': TextTag;
+  'heading-4-interface': TextTag;
+  'body-interface': TextTag;
+  'body-small-interface': TextTag;
+  'heading-1-document': TextTag;
+  'heading-2-document': TextTag;
+  'heading-3-document': TextTag;
+  'heading-4-document': TextTag;
+  'body-document': TextTag;
+  'body-small-document': TextTag;
+  'error-document': TextTag;
+  'quote-document': TextTag;
 }

@@ -15,12 +15,12 @@ export const Template = (args) => <Text {...args} />;
 This is `Text` atom, used to insert text in our software UI. 
 We have 6 types of interface's text, indicated by `as` prop:
 
-- `big-title`
-- `typical-title`
-- `section-title`
-- `sub-title`
-- `content-body`
-- `body-small`
+- `heading-1-interface`
+- `heading-2-interface`
+- `heading-3-interface`
+- `heading-4-interface`
+- `body-interface`
+- `body-small-interface`
 
 And could be bold or normal depending on `variant` prop:
 
@@ -31,13 +31,13 @@ And could be bold or normal depending on `variant` prop:
 
 ## Titles
 
-`as = 'big-title'` use this on the software and project titles
+`as = 'heading-1-interface'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="big-title"
+    name="heading-1-interface"
     args={{
-      as: "big-title",
+      as: "heading-1-interface",
       variant: "bold",
       children: "welcome to structuraid",
       useColor: "primary"
@@ -47,13 +47,13 @@ And could be bold or normal depending on `variant` prop:
   </Story>
 </Canvas>
 
-`as = 'typical-title'` use this on the software and project titles
+`as = 'heading-2-interface'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="typical-title"
+    name="heading-2-interface"
     args={{
-      as: "typical-title",
+      as: "heading-2-interface",
       variant: "bold",
       children: "PIP: lago alto",
       useColor: "secondary"
@@ -63,13 +63,13 @@ And could be bold or normal depending on `variant` prop:
   </Story>
 </Canvas>
 
-`as = 'section-title'` use this on the software and project titles
+`as = 'heading-3-interface'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="section-title"
+    name="heading-3-interface"
     args={{
-      as: "section-title",
+      as: "heading-3-interface",
       variant: "normal",
       children: "PIP: lago alto",
       useColor: "secondary"
@@ -79,13 +79,13 @@ And could be bold or normal depending on `variant` prop:
   </Story>
 </Canvas>
 
-`as = 'sub-title'` use this on the software and project titles
+`as = 'heading-4-interface'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="sub-title"
+    name="heading-4-interface"
     args={{
-      as: "sub-title",
+      as: "heading-4-interface",
       variant: "normal",
       children: "PIP: lago alto",
       useColor: "secondary"
@@ -99,13 +99,13 @@ And could be bold or normal depending on `variant` prop:
 
 text to use in the content of the UI of structuraid.
 
-`as = 'content-body'` use this on the software and project titles
+`as = 'body-interface'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="content-body"
+    name="body-interface"
     args={{
-      as: "content-body",
+      as: "body-interface",
       variant: "normal",
       children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
       useColor: "secondary"
@@ -115,13 +115,13 @@ text to use in the content of the UI of structuraid.
   </Story>
 </Canvas>
 
-`as = 'body-small'` use this on the software and project titles
+`as = 'body-small-interface'` use this on the software and project titles
 
 <Canvas>
   <Story
-    name="body-small"
+    name="body-small-interface"
     args={{
-      as: "body-small",
+      as: "body-small-interface",
       variant: "normal",
       children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
       useColor: "secondary"
@@ -145,9 +145,9 @@ Depending on `useColor`prop, we have:
 
 <Canvas>
   <Story
-    name="body-small-color-primary"
+    name="body-small-interface-color-primary"
     args={{
-      as: "body-small",
+      as: "body-small-interface",
       variant: "normal",
       children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
       useColor: "primary"
@@ -159,9 +159,9 @@ Depending on `useColor`prop, we have:
 
 <Canvas>
   <Story
-    name="body-small-color-secondary"
+    name="body-small-interface-color-secondary"
     args={{
-      as: "body-small",
+      as: "body-small-interface",
       variant: "normal",
       children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
       useColor: "secondary"
@@ -173,9 +173,9 @@ Depending on `useColor`prop, we have:
 
 <Canvas>
   <Story
-    name="body-small-color-blueWhite"
+    name="body-small-interface-color-blueWhite"
     args={{
-      as: "body-small",
+      as: "body-small-interface",
       variant: "normal",
       children: "Footing type A schema",
       useColor: "blueWhite"
@@ -187,9 +187,9 @@ Depending on `useColor`prop, we have:
 
 <Canvas>
   <Story
-    name="body-small-color-redWhite"
+    name="body-small-interface-color-redWhite"
     args={{
-      as: "body-small",
+      as: "body-small-interface",
       variant: "bold",
       children: "Footing type A schema",
       useColor: "redWhite"
@@ -201,9 +201,9 @@ Depending on `useColor`prop, we have:
 
 <Canvas>
   <Story
-    name="body-small-color-warning"
+    name="body-small-interface-color-warning"
     args={{
-      as: "body-small",
+      as: "body-small-interface",
       variant: "normal",
       children: "Footing pressure is 2% great than foundation's limit",
       useColor: "warning"
@@ -215,9 +215,9 @@ Depending on `useColor`prop, we have:
 
 <Canvas>
   <Story
-    name="body-small-color-error"
+    name="body-small-interface-color-error"
     args={{
-      as: "body-small",
+      as: "body-small-interface",
       variant: "normal",
       children: "Footing pressure exceeds limit of foundation",
       useColor: "error"
@@ -229,9 +229,9 @@ Depending on `useColor`prop, we have:
 
 <Canvas>
   <Story
-    name="body-small-color-success"
+    name="body-small-interface-color-success"
     args={{
-      as: "body-small",
+      as: "body-small-interface",
       variant: "normal",
       children: "DXF succesfully loaded",
       useColor: "success"
@@ -248,20 +248,20 @@ Depending on `useColor`prop, we have:
 This is `Text` atom, used to generate pdf for memories. 
 We have 8 types of interface's text, indicated by `as` prop:
 
-- `title`
-- `chapter`
-- `chapter-section'`
-- `content-title`
-- `content`
-- `content-small`
-- `error`
-- `quote`
+- `heading-1-document`
+- `heading-2-document`
+- `heading-3-document'`
+- `heading-4-document`
+- `body-document`
+- `body-small-document`
+- `error-document`
+- `quote-document`
 
 <Canvas>
   <Story
-    name="title"
+    name="heading-1-document"
     args={{
-      as: "title",
+      as: "heading-1-document",
       children: "PIP: Lago alto | structural design memories"
     }}
   >
@@ -271,9 +271,9 @@ We have 8 types of interface's text, indicated by `as` prop:
 
 <Canvas>
   <Story
-    name="chapter"
+    name="heading-2-document"
     args={{
-      as: "chapter",
+      as: "heading-2-document",
       children: "Footing design"
     }}
   >
@@ -283,9 +283,9 @@ We have 8 types of interface's text, indicated by `as` prop:
 
 <Canvas>
   <Story
-    name="chapter-section"
+    name="heading-3-document"
     args={{
-      as: "chapter-section",
+      as: "heading-3-document",
       children: "Footing type 1"
     }}
   >
@@ -295,9 +295,9 @@ We have 8 types of interface's text, indicated by `as` prop:
 
 <Canvas>
   <Story
-    name="content-title"
+    name="heading-4-document"
     args={{
-      as: "content-title",
+      as: "heading-4-document",
       children: "One-way shear check | Two-ways shear check | Bending reinforcement"
     }}
   >
@@ -307,9 +307,9 @@ We have 8 types of interface's text, indicated by `as` prop:
 
 <Canvas>
   <Story
-    name="content"
+    name="body-document"
     args={{
-      as: "content",
+      as: "body-document",
       children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
     }}
   >
@@ -319,9 +319,9 @@ We have 8 types of interface's text, indicated by `as` prop:
 
 <Canvas>
   <Story
-    name="content-small"
+    name="body-small-document"
     args={{
-      as: "content-small",
+      as: "body-small-document",
       children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible."
     }}
   >
@@ -331,9 +331,9 @@ We have 8 types of interface's text, indicated by `as` prop:
 
 <Canvas>
   <Story
-    name="error"
+    name="error-document"
     args={{
-      as: "error",
+      as: "error-document",
       children: "shear checks failled"
     }}
   >
@@ -343,9 +343,9 @@ We have 8 types of interface's text, indicated by `as` prop:
 
 <Canvas>
   <Story
-    name="quote"
+    name="quote-document"
     args={{
-      as: "quote",
+      as: "quote-document",
       children: "Once the area is determined, a factored soil pressure is obtained by dividing the factored load, Pu= 1.2D + 1.6L, by the area of the footing. This is required to design the footing by the strength design method."
     }}
   >
