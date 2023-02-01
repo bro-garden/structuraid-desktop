@@ -35,8 +35,8 @@ module.exports = {
     },
     textColor: {
       primary: '#0F253E',
-      secondary: '#64666A',
-      blueWhite: '#F6F6F6',
+      secondary: '#1D4A7C',
+      blueWhite: '#EAF2FA',
       redWhite: '#F3DEE0',
       warning: '#EED202',
       error: '#E3342F',
