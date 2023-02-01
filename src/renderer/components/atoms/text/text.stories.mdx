@@ -13,8 +13,15 @@ export const Template = (args) => <Text {...args} />;
 # Text - interface
 
 This is `Text` atom, used to insert text in our software. 
-We have six types of text, indicated by `as` prop;
+We have six types of interface's text, indicated by `as` prop;
 and could be bold or regular depending on `variant` prop
+
+- `big-title`
+- `typical-title`
+- `section-title`
+- `sub-title`
+- `content-body`
+- `body-small`
 
 
 ## Titles
@@ -317,4 +324,30 @@ By modifying the `useColor` prop we can change the color of the Text, available 
 
 # Text - documents
 
+This is `Text` atom, used to insert text in our software. 
+We have seven types of documents's text, indicated by `variant` prop.
+We build a document'stext component with null `as` and `useColor`
 
+- `title`
+- `chapter-title`
+- `chapter-sub-title`
+- `content`
+- `content-small`
+- `error`
+- `warning`
+
+## Titles
+
+`variant = 'title'` use this on the software and project titles
+
+<Canvas>
+  <Story
+    name="document_title"
+    args={{
+      variant: "title",
+      children: "structuraid"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

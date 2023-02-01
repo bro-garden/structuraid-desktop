@@ -47,9 +47,9 @@ export interface DefaultTags {
 
 export type DefaultDocumentTag =
   | 'title'
-  | 'section-title'
-  | 'section-sub-title'
-  | 'content-body'
-  | 'body-small'
+  | 'chapter-title'
+  | 'chapter-sub-title'
+  | 'content'
+  | 'content-small'
   | 'error'
   | 'warning';
