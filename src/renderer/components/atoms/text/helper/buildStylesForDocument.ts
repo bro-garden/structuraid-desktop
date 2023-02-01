@@ -5,76 +5,38 @@ const buildStylesForDocument = (as: TextUsage): string => {
 
   switch (as) {
     case 'heading-1-document': {
-      styles = styles.concat(
-        ['text-print-xl'],
-        ['font-bold'],
-        ['text-documentDarkRed']
-      );
+      styles = styles.concat(['text-print-xl'], ['font-bold']);
       break;
     }
     case 'heading-2-document': {
-      styles = styles.concat(
-        ['text-print-l'],
-        ['font-bold'],
-        ['text-documentDarkRed']
-      );
+      styles = styles.concat(['text-print-l'], ['font-bold']);
       break;
     }
     case 'heading-3-document': {
-      styles = styles.concat(
-        ['text-print-l'],
-        ['font-normal'],
-        ['text-documentLightRed']
-      );
+      styles = styles.concat(['text-print-l'], ['font-normal']);
       break;
     }
     case 'heading-4-document': {
-      styles = styles.concat(
-        ['text-print-sm'],
-        ['font-bold'],
-        ['text-grayDark']
-      );
+      styles = styles.concat(['text-print-sm'], ['font-bold']);
       break;
     }
     case 'body-document': {
-      styles = styles.concat(
-        ['text-print-sm'],
-        ['font-normal'],
-        ['text-grayDarkSoft']
-      );
+      styles = styles.concat(['text-print-sm'], ['font-normal']);
       break;
     }
     case 'body-small-document': {
-      styles = styles.concat(
-        ['text-print-xs'],
-        ['font-normal'],
-        ['text-grayDarkSoft']
-      );
+      styles = styles.concat(['text-print-xs'], ['font-normal']);
       break;
     }
     case 'error-document': {
-      styles = styles.concat(
-        ['text-print-sm'],
-        ['font-normal'],
-        ['text-documentLightRed']
-      );
+      styles = styles.concat(['text-print-sm'], ['font-normal']);
       break;
     }
     case 'quote-document': {
-      styles = styles.concat(
-        ['text-print-sm'],
-        ['font-normal'],
-        ['italic'],
-        ['text-graySoft']
-      );
+      styles = styles.concat(['text-print-sm'], ['font-normal'], ['italic']);
       break;
     }
     default: {
-      styles = styles.concat(
-        ['text-print-sm'],
-        ['font-normal'],
-        ['text-grayDarkSoft']
-      );
       break;
     }
   }

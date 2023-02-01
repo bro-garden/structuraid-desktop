@@ -27,3 +27,12 @@ export const DOCUMENT_VARIANTS: TextUsage[] = [
   'error-document',
   'quote-document',
 ];
+
+export const INTERFACE_VARIANTS: TextUsage[] = [
+  'heading-1-interface',
+  'heading-2-interface',
+  'heading-3-interface',
+  'heading-4-interface',
+  'body-interface',
+  'body-small-interface',
+];

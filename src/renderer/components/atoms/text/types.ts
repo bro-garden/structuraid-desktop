@@ -16,23 +16,22 @@ export type TextUsage =
   | 'body-small-document'
   | 'error-document'
   | 'quote-document';
-export type TextVariant = 'bold' | 'normal' | 'italic' | '';
+export type TextVariant = 'bold' | 'normal' | 'italic';
 export type TextColor =
   | 'primary'
   | 'secondary'
-  | 'blueWhite'
-  | 'redWhite'
+  | 'blue-white'
+  | 'red-white'
   | 'warning'
   | 'error'
-  | 'success'
-  | '';
+  | 'success';
 
 export interface TextProps {
   as: TextUsage;
   variant?: TextVariant;
   className?: string;
   children: ReactNode;
-  useColor?: TextColor;
+  color?: TextColor;
 }
 
 export interface DefaultTags {

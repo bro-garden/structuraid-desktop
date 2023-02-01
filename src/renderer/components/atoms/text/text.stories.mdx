@@ -8,9 +8,10 @@ import Text from './text';
 
 export const Template = (args) => <Text {...args} />;
 
- ---
+# Text
 
-# Text - interface
+
+##  Usage for App UI
 
 This is `Text` atom, used to insert text in our software UI. 
 We have 6 types of interface's text, indicated by `as` prop:
@@ -22,14 +23,11 @@ We have 6 types of interface's text, indicated by `as` prop:
 - `body-interface`
 - `body-small-interface`
 
-And could be bold or normal depending on `variant` prop:
+And could be bold, italic or normal depending on `variant` prop:
 
 - `bold`
 - `normal`
 - `italic`
-
-
-## Titles
 
 `as = 'heading-1-interface'` use this on the software and project titles
 
@@ -40,7 +38,7 @@ And could be bold or normal depending on `variant` prop:
       as: "heading-1-interface",
       variant: "bold",
       children: "welcome to structuraid",
-      useColor: "primary"
+      color: "primary"
     }}
   >
     {Template.bind({})}
@@ -56,7 +54,7 @@ And could be bold or normal depending on `variant` prop:
       as: "heading-2-interface",
       variant: "bold",
       children: "PIP: lago alto",
-      useColor: "secondary"
+      color: "secondary"
     }}
   >
     {Template.bind({})}
@@ -72,7 +70,7 @@ And could be bold or normal depending on `variant` prop:
       as: "heading-3-interface",
       variant: "normal",
       children: "PIP: lago alto",
-      useColor: "secondary"
+      color: "secondary"
     }}
   >
     {Template.bind({})}
@@ -88,16 +86,12 @@ And could be bold or normal depending on `variant` prop:
       as: "heading-4-interface",
       variant: "normal",
       children: "PIP: lago alto",
-      useColor: "secondary"
+      color: "secondary"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
-
-## Body
-
-text to use in the content of the UI of structuraid.
 
 `as = 'body-interface'` use this on the software and project titles
 
@@ -108,7 +102,7 @@ text to use in the content of the UI of structuraid.
       as: "body-interface",
       variant: "normal",
       children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
-      useColor: "secondary"
+      color: "secondary"
     }}
   >
     {Template.bind({})}
@@ -124,21 +118,21 @@ text to use in the content of the UI of structuraid.
       as: "body-small-interface",
       variant: "normal",
       children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
-      useColor: "secondary"
+      color: "secondary"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-## Colors
+### Colors
 
-Depending on `useColor`prop, we have:
+Depending on `color`prop, we have:
 
 - `primary`
 - `secondary`
-- `blueWhite`
-- `redWhite`
+- `blue-white`
+- `red-white`
 - `warning`
 - `error`
 - `success`
@@ -150,7 +144,7 @@ Depending on `useColor`prop, we have:
       as: "body-small-interface",
       variant: "normal",
       children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
-      useColor: "primary"
+      color: "primary"
     }}
   >
     {Template.bind({})}
@@ -164,7 +158,7 @@ Depending on `useColor`prop, we have:
       as: "body-small-interface",
       variant: "normal",
       children: "Reinforced concrete footings are structural members used to support columns and walls and to transmit and distribute their loads to the soil. The design is based on the assumption that the footing is rigid, so that the variation of the soil pressure under the footing is linear. Uniform soil pressure is achieved when the column load coincides with the centroid of the footing. Although this assumption is acceptable for rigid footings, such an assumption becomes less accurate as the footing becomes relatively more flexible.",
-      useColor: "secondary"
+      color: "secondary"
     }}
   >
     {Template.bind({})}
@@ -173,12 +167,12 @@ Depending on `useColor`prop, we have:
 
 <Canvas>
   <Story
-    name="body-small-interface-color-blueWhite"
+    name="body-small-interface-color-blue-white"
     args={{
       as: "body-small-interface",
       variant: "normal",
       children: "Footing type A schema",
-      useColor: "blueWhite"
+      color: "blue-white"
     }}
   >
     {Template.bind({})}
@@ -187,12 +181,12 @@ Depending on `useColor`prop, we have:
 
 <Canvas>
   <Story
-    name="body-small-interface-color-redWhite"
+    name="body-small-interface-color-red-white"
     args={{
       as: "body-small-interface",
       variant: "bold",
       children: "Footing type A schema",
-      useColor: "redWhite"
+      color: "red-white"
     }}
   >
     {Template.bind({})}
@@ -206,7 +200,7 @@ Depending on `useColor`prop, we have:
       as: "body-small-interface",
       variant: "normal",
       children: "Footing pressure is 2% great than foundation's limit",
-      useColor: "warning"
+      color: "warning"
     }}
   >
     {Template.bind({})}
@@ -220,7 +214,7 @@ Depending on `useColor`prop, we have:
       as: "body-small-interface",
       variant: "normal",
       children: "Footing pressure exceeds limit of foundation",
-      useColor: "error"
+      color: "error"
     }}
   >
     {Template.bind({})}
@@ -234,16 +228,15 @@ Depending on `useColor`prop, we have:
       as: "body-small-interface",
       variant: "normal",
       children: "DXF succesfully loaded",
-      useColor: "success"
+      color: "success"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
- ---
 
-# Text - documentation
+##  Usage for Docs generation
 
 This is `Text` atom, used to generate pdf for memories. 
 We have 8 types of interface's text, indicated by `as` prop:
