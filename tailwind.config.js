@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Nunito', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      serif: ['Libre Baskerville ', 'serif'],
     },
     fontSize: {
       '4xl': [

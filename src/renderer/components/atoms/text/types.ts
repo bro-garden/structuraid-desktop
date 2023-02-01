@@ -8,14 +8,32 @@ export type TextUsage =
   | 'sub-title'
   | 'content-body'
   | 'body-small';
-export type TextVariant = 'bold' | 'regular';
+export type TextVariant =
+  | 'bold'
+  | 'regular'
+  | 'title'
+  | 'section-title'
+  | 'section-sub-title'
+  | 'content-body'
+  | 'body-small'
+  | 'error'
+  | 'warning';
+
+export type TextColor =
+  | 'primary'
+  | 'secondary'
+  | 'blueWhite'
+  | 'redWhite'
+  | 'warning'
+  | 'error'
+  | 'success';
 
 export interface TextProps {
   as: TextUsage;
   variant: TextVariant;
   className?: string;
   children: ReactNode;
-  useColor?: string;
+  useColor?: TextColor;
 }
 
 export interface DefaultTags {
@@ -26,3 +44,12 @@ export interface DefaultTags {
   'content-body': TextTag;
   'body-small': TextTag;
 }
+
+export type DefaultDocumentTag =
+  | 'title'
+  | 'section-title'
+  | 'section-sub-title'
+  | 'content-body'
+  | 'body-small'
+  | 'error'
+  | 'warning';
