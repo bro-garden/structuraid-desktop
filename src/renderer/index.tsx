@@ -1,7 +1,10 @@
 import { createRoot } from 'react-dom/client';
 import App from 'renderer/app';
+import invariant from 'tiny-invariant';
 
-const container = document.getElementById('root')!;
+const container = document.getElementById('root');
+invariant(container, 'root container not found');
+
 const root = createRoot(container);
 root.render(<App />);
 
