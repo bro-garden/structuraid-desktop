@@ -29,14 +29,18 @@ const buildStylesForDocument = (as: TextUsage): string => {
       break;
     }
     case 'content-title': {
-      styles = styles.concat(['text-print-sm'], ['font-bold'], ['text-gay50']);
+      styles = styles.concat(
+        ['text-print-sm'],
+        ['font-bold'],
+        ['text-grayDark']
+      );
       break;
     }
     case 'content': {
       styles = styles.concat(
         ['text-print-sm'],
         ['font-normal'],
-        ['text-gay40']
+        ['text-grayDarkSoft']
       );
       break;
     }
@@ -44,7 +48,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
       styles = styles.concat(
         ['text-print-xs'],
         ['font-normal'],
-        ['text-gay40']
+        ['text-grayDarkSoft']
       );
       break;
     }
@@ -61,7 +65,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
         ['text-print-sm'],
         ['font-normal'],
         ['italic'],
-        ['text-gay10']
+        ['text-graySoft']
       );
       break;
     }
@@ -69,7 +73,7 @@ const buildStylesForDocument = (as: TextUsage): string => {
       styles = styles.concat(
         ['text-print-sm'],
         ['font-normal'],
-        ['text-gay40']
+        ['text-grayDarkSoft']
       );
       break;
     }

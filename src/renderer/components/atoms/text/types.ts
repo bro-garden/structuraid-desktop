@@ -16,7 +16,7 @@ export type TextUsage =
   | 'content-small'
   | 'error'
   | 'quote';
-export type TextVariant = 'bold' | 'normal' | 'italic';
+export type TextVariant = 'bold' | 'normal' | 'italic' | '';
 export type TextColor =
   | 'primary'
   | 'secondary'
@@ -24,11 +24,12 @@ export type TextColor =
   | 'redWhite'
   | 'warning'
   | 'error'
-  | 'success';
+  | 'success'
+  | '';
 
 export interface TextProps {
   as: TextUsage;
-  variant: TextVariant;
+  variant?: TextVariant;
   className?: string;
   children: ReactNode;
   useColor?: TextColor;

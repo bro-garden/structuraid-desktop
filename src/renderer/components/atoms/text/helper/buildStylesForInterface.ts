@@ -10,6 +10,8 @@ const buildStylesForInterface = (
     styles = styles.concat(['font-bold']);
   } else if (variantName === 'normal') {
     styles = styles.concat(['font-normal']);
+  } else if (variantName === 'italic') {
+    styles = styles.concat(['font-normal'], ['italic']);
   }
 
   switch (as) {
