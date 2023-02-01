@@ -1,6 +1,20 @@
 import type { ReactNode } from 'react';
 
-export type TextTag = 'h1' | 'h2' | 'h3' | 'h4' | 'span' | 'p';
+export type TextType =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'span'
+  | 'p'
+  | 'title'
+  | 'chapter'
+  | 'chapter-section'
+  | 'content-title'
+  | 'content'
+  | 'content-small'
+  | 'error'
+  | 'quote';
 export type TextUsage =
   | 'big-title'
   | 'typical-title'
@@ -8,17 +22,7 @@ export type TextUsage =
   | 'sub-title'
   | 'content-body'
   | 'body-small';
-export type TextVariant =
-  | 'bold'
-  | 'regular'
-  | 'title'
-  | 'section-title'
-  | 'section-sub-title'
-  | 'content-body'
-  | 'body-small'
-  | 'error'
-  | 'warning';
-
+export type TextVariant = 'bold' | 'regular' | 'italic';
 export type TextColor =
   | 'primary'
   | 'secondary'
@@ -37,19 +41,10 @@ export interface TextProps {
 }
 
 export interface DefaultTags {
-  'big-title': TextTag;
-  'typical-title': TextTag;
-  'section-title': TextTag;
-  'sub-title': TextTag;
-  'content-body': TextTag;
-  'body-small': TextTag;
+  'big-title': TextType;
+  'typical-title': TextType;
+  'section-title': TextType;
+  'sub-title': TextType;
+  'content-body': TextType;
+  'body-small': TextType;
 }
-
-export type DefaultDocumentTag =
-  | 'title'
-  | 'chapter-title'
-  | 'chapter-sub-title'
-  | 'content'
-  | 'content-small'
-  | 'error'
-  | 'warning';
