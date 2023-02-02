@@ -47,8 +47,9 @@
     "start:preload": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.preload.dev.ts",
     "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
     "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "concurrently \"npm run watch:css\" \"start-storybook -p 6006\"",
+    "build-storybook": "build-storybook",
+    "watch:css": "npx tailwindcss -i ./src/renderer/app/app.css -o ./src/renderer/app/tailwind.css --watch"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
