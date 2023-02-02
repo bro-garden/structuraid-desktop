@@ -1,0 +1,43 @@
+<!-- Button.stories.mdx -->
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Button from './button';
+
+<Meta title="Atoms/Button" component={Button} />
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+
+##  Usage for App UI
+
+This is `Text` atom, used to insert text in our software UI. 
+We have 6 types of interface's text, indicated by `as` prop:
+
+- `heading-1-interface`
+- `heading-2-interface`
+- `heading-3-interface`
+- `heading-4-interface`
+- `body-interface`
+- `body-small-interface`
+
+And could be bold, italic or normal depending on `variant` prop:
+
+- `bold`
+- `normal`
+- `italic`
+
+`as = 'heading-1-interface'` use this on the software and project titles
+
+<Canvas>
+  <Story
+    name="heading-1-interface"
+    args={{
+      label: "welcome to structuraid",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
