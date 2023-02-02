@@ -24,20 +24,6 @@ module.exports = {
           lineHeight: '1.2',
         },
       ],
-      l: [
-        '1.25rem',
-        {
-          lineHeight: '1.2',
-        },
-      ],
-      s: '1rem',
-      xs: '0.75rem',
-      'print-xl': [
-        '24px',
-        {
-          lineHeight: '1.5',
-        },
-      ],
       'print-l': [
         '20px',
         {

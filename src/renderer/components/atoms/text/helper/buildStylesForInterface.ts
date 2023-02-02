@@ -28,11 +28,11 @@ const buildStylesForInterface = (
       break;
     }
     case 'heading-4-interface': {
-      styles = styles.concat(['text-l']);
+      styles = styles.concat(['text-xl']);
       break;
     }
     case 'body-interface': {
-      styles = styles.concat(['text-s']);
+      styles = styles.concat(['text-base']);
       break;
     }
     case 'body-small-interface': {
@@ -40,7 +40,7 @@ const buildStylesForInterface = (
       break;
     }
     default: {
-      styles = styles.concat(['text-s']);
+      styles = styles.concat(['text-base']);
       break;
     }
   }
