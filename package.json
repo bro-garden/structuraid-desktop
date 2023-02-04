@@ -49,6 +49,7 @@
     "test": "jest",
     "storybook": "concurrently \"npm run watch:css\" \"start-storybook -p 6006\"",
     "build-storybook": "build-storybook",
+    "build:css": "npx tailwindcss -i ./src/renderer/app/app.css -o ./src/renderer/app/tailwind.css",
     "watch:css": "npx tailwindcss -i ./src/renderer/app/app.css -o ./src/renderer/app/tailwind.css --watch"
   },
   "lint-staged": {

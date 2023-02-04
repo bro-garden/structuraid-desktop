@@ -37,6 +37,8 @@ jobs:
           cache: 'npm'
       - name: Install Node dependencies
         run: npm ci
+      - name: Build Tailwind Styles
+        run: npm run build:css
       - name: Build Storybook Assets
         run: npm run build-storybook
         env:
