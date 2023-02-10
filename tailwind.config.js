@@ -24,6 +24,30 @@ module.exports = {
           lineHeight: '1.2',
         },
       ],
+      xl: [
+        '1.25rem',
+        {
+          lineHeight: '1.2',
+        },
+      ],
+      base: [
+        '1rem',
+        {
+          lineHeight: '1.2',
+        },
+      ],
+      xs: [
+        '0.75rem',
+        {
+          lineHeight: '1.2',
+        },
+      ],
+      'print-xl': [
+        '26px',
+        {
+          lineHeight: '1.5',
+        },
+      ],
       'print-l': [
         '20px',
         {
@@ -43,9 +67,11 @@ module.exports = {
         },
       ],
     },
-    textColor: {
+    colors: {
       primary: '#0F253E',
       secondary: '#1D4A7C',
+      blue: '#317BCF',
+      'light-blue': '#ADCAEC',
       'blue-white': '#EAF2FA',
       'red-white': '#F3DEE0',
       warning: '#EED202',
@@ -57,6 +83,7 @@ module.exports = {
       'gray-dark-soft': '#535868',
       'gray-soft': '#B3B7C3',
       'gray-soft-light': '#E5E7EB',
+      transparent: 'transparent',
     },
   },
   variants: {},
