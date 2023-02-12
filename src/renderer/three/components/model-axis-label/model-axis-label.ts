@@ -38,9 +38,12 @@ class ModelAxisLabel {
 
   static #buildCircle() {
     const geometry = new CircleGeometry(CIRCLE_RADIUS, CIRCLE_SEGMENTS);
-    const material = new MeshBasicMaterial({ color: COLORS.WHITE });
+    const material = new MeshBasicMaterial({ color: COLORS.GRAY2 });
 
     const circle = new Mesh(geometry, material);
+
+    circle.position.set(10, 10, 0);
+
     return circle;
   }
 
@@ -53,9 +56,8 @@ class ModelAxisLabel {
     containerEl.appendChild(labelEl);
 
     const labelObject = new CSS3DObject(labelEl);
-    labelObject.position.x = 0;
-    labelObject.position.y = 0;
-    labelObject.position.z = 0;
+
+    labelObject.position.set(10, 10, 0);
 
     return labelObject;
   }
