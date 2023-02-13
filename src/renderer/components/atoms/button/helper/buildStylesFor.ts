@@ -63,11 +63,10 @@ const buildStylesFor = (
       );
       if (!disabled) {
         styles = styles.concat(
-          ['hover:border-secondary'],
-          ['hover:bg-blue-white'],
-          ['hover:text-secondary'],
+          ['hover:bg-error'],
+          ['hover:text-blue-white'],
           ['active:border-primary'],
-          ['active:bg-error'],
+          ['active:bg-secondary'],
           ['active:text-blue-white']
         );
         styles.join(' ');
