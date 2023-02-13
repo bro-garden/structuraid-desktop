@@ -25,7 +25,7 @@ And `variant` prop:
 - `big`
 - `small`
 
-<Canvas withSource="open">
+<Canvas>
   <Story
     name="button-primary-big"
     args={{
@@ -38,7 +38,7 @@ And `variant` prop:
   </Story>
 </Canvas>
 
-<Canvas withSource="open">
+<Canvas>
   <Story
     name="button-primary-small"
     args={{
@@ -51,7 +51,7 @@ And `variant` prop:
   </Story>
 </Canvas>
 
-<Canvas withSource="open">
+<Canvas>
   <Story
     name="button-secondary-big"
     args={{
@@ -64,7 +64,7 @@ And `variant` prop:
   </Story>
 </Canvas>
 
-<Canvas withSource="open">
+<Canvas>
   <Story
     name="button-secondary-small"
     args={{
@@ -77,10 +77,36 @@ And `variant` prop:
   </Story>
 </Canvas>
 
+<Canvas>
+  <Story
+    name="button-warning-big"
+    args={{
+      type: "warning",
+      variant: "big",
+      label: "Delete footing"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="button-warning-small"
+    args={{
+      type: "warning",
+      variant: "small",
+      label: "Delete footing"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 And there is an `disabled` boolean prop:
 
 
-<Canvas columns={3} withSource="open">
+<Canvas columns={3}>
   <Story
     name="button-primary-big-disabled"
     argTypes={{

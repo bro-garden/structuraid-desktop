@@ -25,7 +25,7 @@ const buildStylesFor = (
         styles.join(' ');
         break;
       }
-      styles = styles.concat(['disabled:bg-gray-300']);
+      styles = styles.concat(['disabled:bg-gray-soft']);
       styles.join(' ');
       break;
     case 'secondary':
@@ -47,7 +47,34 @@ const buildStylesFor = (
         break;
       }
       styles = styles.concat(
-        ['disabled:bg-gray-300'],
+        ['disabled:bg-gray-soft'],
+        ['border'],
+        ['disabled:text-blue-white']
+      );
+      styles.join(' ');
+      break;
+    case 'warning':
+      styles = styles.concat(
+        ['rounded-full'],
+        ['text-error'],
+        ['bg-red-white'],
+        ['border-2'],
+        ['border-error']
+      );
+      if (!disabled) {
+        styles = styles.concat(
+          ['hover:border-secondary'],
+          ['hover:bg-blue-white'],
+          ['hover:text-secondary'],
+          ['active:border-primary'],
+          ['active:bg-error'],
+          ['active:text-blue-white']
+        );
+        styles.join(' ');
+        break;
+      }
+      styles = styles.concat(
+        ['disabled:bg-gray-soft'],
         ['border'],
         ['disabled:text-blue-white']
       );
