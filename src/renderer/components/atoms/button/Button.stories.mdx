@@ -18,13 +18,12 @@ We have 2 types of interface's text, indicated by `type` prop:
 
 - `primary`
 - `secondary`
+- `warning`
 
 And `variant` prop:
 
 - `big`
-- `big-full-w`
 - `small`
-- `small-full-w`
 
 <Canvas withSource="open">
   <Story
@@ -32,19 +31,6 @@ And `variant` prop:
     args={{
       type: "primary",
       variant: "big",
-      label: "Open project..."
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-<Canvas withSource="open">
-  <Story
-    name="button-primary-big-full-w"
-    args={{
-      type: "primary",
-      variant: "big-full-w",
       label: "Open project..."
     }}
   >
@@ -67,37 +53,11 @@ And `variant` prop:
 
 <Canvas withSource="open">
   <Story
-    name="button-primary-small-full-w"
-    args={{
-      type: "primary",
-      variant: "small-full-w",
-      label: "Open footing design"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-<Canvas withSource="open">
-  <Story
     name="button-secondary-big"
     args={{
       type: "secondary",
       variant: "big",
-      label: "Run checkings"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-<Canvas withSource="open">
-  <Story
-    name="button-secondary-big-full-w"
-    args={{
-      type: "secondary",
-      variant: "big-full-w",
-      label: "Run checkings"
+      label: "Run all checks"
     }}
   >
     {Template.bind({})}
@@ -110,20 +70,41 @@ And `variant` prop:
     args={{
       type: "secondary",
       variant: "small",
-      label: "Run checkings"
+      label: "Run all checks"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<Canvas withSource="open">
+And there is an `disabled` boolean prop:
+
+
+<Canvas columns={3} withSource="open">
   <Story
-    name="button-secondary-small-full-w"
+    name="button-primary-big-disabled"
+    argTypes={{
+      disabled: {control: 'boolean'},
+    }}
+    args={{
+      type: "primary",
+      variant: "big",
+      disabled: true,
+      label: "Run all checks"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+    <Story
+    name="button-secondary-small-disabled"
+    argTypes={{
+      disabled: {control: 'boolean'},
+    }}
     args={{
       type: "secondary",
-      variant: "small-full-w",
-      label: "Run checkings"
+      variant: "small",
+      disabled: true,
+      label: "Run all checks"
     }}
   >
     {Template.bind({})}

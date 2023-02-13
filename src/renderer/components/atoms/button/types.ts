@@ -9,4 +9,5 @@ export interface ButtonProps {
   children?: ReactNode;
   type?: ButtonType;
   variant?: ButtonVariants;
+  disabled?: boolean;
 }

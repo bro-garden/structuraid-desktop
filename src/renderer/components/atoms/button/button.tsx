@@ -7,9 +7,18 @@ const Button = ({
   label,
   type = 'primary',
   variant = 'big',
+  disabled = false,
   children,
 }: ButtonProps) => {
-  const styles = buildStylesFor(type, variant);
+  const styles = buildStylesFor(type, variant, disabled);
+
+  if (disabled) {
+    return (
+      <button className={`${styles} ${className || ''}`} disabled>
+        {label || children}
+      </button>
+    );
+  }
 
   return (
     <button className={`${styles} ${className || ''}`}>
