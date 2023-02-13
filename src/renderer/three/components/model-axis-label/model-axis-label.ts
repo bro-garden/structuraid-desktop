@@ -33,8 +33,6 @@ class ModelAxisLabel {
     this.object3D = this.#build3DObject();
   }
 
-  // update({ camera }: ModelAxisLabelUpdateOptions) {}
-
   #build3DObject() {
     const group = new Group();
 
@@ -46,7 +44,7 @@ class ModelAxisLabel {
 
   static #buildCircle(position: Vector2) {
     const geometry = new CircleGeometry(LABEL_SIZE / 2, CIRCLE_SEGMENTS);
-    const material = new MeshBasicMaterial({ color: COLORS.GRAY2 });
+    const material = new MeshBasicMaterial({ color: COLORS.GRAY40 });
 
     const circle = new Mesh(geometry, material);
 
