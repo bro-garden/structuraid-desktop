@@ -41,6 +41,30 @@ module.exports = {
           lineHeight: '1.2',
         },
       ],
+      xl: [
+        '1.25rem',
+        {
+          lineHeight: '1.2',
+        },
+      ],
+      base: [
+        '1rem',
+        {
+          lineHeight: '1.2',
+        },
+      ],
+      xs: [
+        '0.75rem',
+        {
+          lineHeight: '1.2',
+        },
+      ],
+      'print-xl': [
+        '26px',
+        {
+          lineHeight: '1.5',
+        },
+      ],
       'print-l': [
         '20px',
         {
