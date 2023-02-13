@@ -13,29 +13,117 @@ export const Template = (args) => <Button {...args} />;
 
 ##  Usage for App UI
 
-This is `Text` atom, used to insert text in our software UI. 
-We have 6 types of interface's text, indicated by `as` prop:
+This is `Button` atom, used to insert text in our software UI. 
+We have 2 types of interface's text, indicated by `type` prop:
 
-- `heading-1-interface`
-- `heading-2-interface`
-- `heading-3-interface`
-- `heading-4-interface`
-- `body-interface`
-- `body-small-interface`
+- `primary`
+- `secondary`
 
-And could be bold, italic or normal depending on `variant` prop:
+And `variant` prop:
 
-- `bold`
-- `normal`
-- `italic`
+- `big`
+- `big-full-w`
+- `small`
+- `small-full-w`
 
-`as = 'heading-1-interface'` use this on the software and project titles
-
-<Canvas>
+<Canvas withSource="open">
   <Story
-    name="heading-1-interface"
+    name="button-primary-big"
     args={{
-      label: "welcome to structuraid",
+      type: "primary",
+      variant: "big",
+      label: "Open project..."
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="button-primary-big-full-w"
+    args={{
+      type: "primary",
+      variant: "big-full-w",
+      label: "Open project..."
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="button-primary-small"
+    args={{
+      type: "primary",
+      variant: "small",
+      label: "Open footing design"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="button-primary-small-full-w"
+    args={{
+      type: "primary",
+      variant: "small-full-w",
+      label: "Open footing design"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="button-secondary-big"
+    args={{
+      type: "secondary",
+      variant: "big",
+      label: "Run checkings"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="button-secondary-big-full-w"
+    args={{
+      type: "secondary",
+      variant: "big-full-w",
+      label: "Run checkings"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="button-secondary-small"
+    args={{
+      type: "secondary",
+      variant: "small",
+      label: "Run checkings"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="button-secondary-small-full-w"
+    args={{
+      type: "secondary",
+      variant: "small-full-w",
+      label: "Run checkings"
     }}
   >
     {Template.bind({})}

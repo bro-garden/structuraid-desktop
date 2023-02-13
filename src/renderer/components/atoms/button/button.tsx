@@ -1,14 +1,19 @@
 /* eslint-disable react/button-has-type */
 import type { ButtonProps } from './types';
+import { buildStylesFor } from './helper';
 
-const Button = ({ label }: ButtonProps) => {
-  // const Element = resolveElement(as);
-  // const styles = buildStylesFor(variant, as);
-  // const TextColor = returnTextColor(as, color);
+const Button = ({
+  className,
+  label,
+  type = 'primary',
+  variant = 'big',
+  children,
+}: ButtonProps) => {
+  const styles = buildStylesFor(type, variant);
 
   return (
-    <button className="hover:bg-secondary hover:text-blue-white bg-blue-white text-9xl text-secondary py-4 px-4 rounded">
-      {label}
+    <button className={`${styles} ${className || ''}`}>
+      {label || children}
     </button>
   );
 };
