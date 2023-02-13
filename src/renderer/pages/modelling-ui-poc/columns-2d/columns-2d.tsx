@@ -8,7 +8,7 @@ import {
 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import invariant from 'tiny-invariant';
-import { InfiniteGrid, ModelAxis } from 'renderer/three/components';
+import { InfiniteGrid, ModelGrid } from 'renderer/three/components';
 import { CSS3DRenderer } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import { COLORS } from 'renderer/constants';
 
@@ -69,25 +69,41 @@ const Columns2D = () => {
 
     scene.add(grid);
 
-    const axisLabelX = new ModelAxis({
-      label: 'A',
-      direction: 'x',
-      startPosition: new Vector2(10, 10),
-      endPosition: new Vector2(200, 10),
+    const modelGrid = new ModelGrid({
+      disposition: {
+        x: [
+          {
+            label: 'A',
+            coordinate: 0,
+          },
+          {
+            label: 'B',
+            coordinate: 12.5,
+          },
+          {
+            label: 'C',
+            coordinate: 17.5,
+          },
+        ],
+        y: [
+          {
+            label: '1',
+            coordinate: 0,
+          },
+          {
+            label: '2',
+            coordinate: 7.5,
+          },
+          {
+            label: '3',
+            coordinate: 15,
+          },
+        ],
+      },
       containerEl: cssContainerEl,
     });
 
-    scene.add(axisLabelX.object3D);
-
-    const axisLabelY = new ModelAxis({
-      label: '1',
-      direction: 'y',
-      startPosition: new Vector2(20, 0),
-      endPosition: new Vector2(20, 200),
-      containerEl: cssContainerEl,
-    });
-
-    scene.add(axisLabelY.object3D);
+    scene.add(modelGrid.object3D);
 
     function animate() {
       requestAnimationFrame(animate);

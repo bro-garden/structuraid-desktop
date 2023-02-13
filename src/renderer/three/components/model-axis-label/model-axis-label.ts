@@ -5,8 +5,8 @@ import { COLORS } from 'renderer/constants';
 import type { Object3D, Vector2 } from 'three';
 import type { ModelAxisLabelOptions } from './types';
 
-export const LABEL_SIZE = 10;
-const LABEL_FONT_SIZE = '0.5rem';
+export const LABEL_SIZE = 5;
+const LABEL_FONT_SIZE = '0.25rem';
 const CIRCLE_SEGMENTS = 32;
 
 class ModelAxisLabel {
