@@ -15,13 +15,13 @@ const buildTextColorForInterface = (color: TextColor): string => {
       return 'text-red-white';
     }
     case 'error': {
-      return 'text-error';
+      return 'text-notice-red';
     }
     case 'warning': {
-      return 'text-warning';
+      return 'text-notice-yellow';
     }
     case 'success': {
-      return 'text-success';
+      return 'text-notice-green';
     }
     default: {
       return 'text-primary';

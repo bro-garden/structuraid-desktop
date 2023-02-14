@@ -1,4 +1,4 @@
-<!-- Button.stories.mdx -->
+<!-- button.stories.mdx -->
 
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
@@ -25,7 +25,7 @@ And `variant` prop:
 - `big`
 - `small`
 
-<Canvas>
+<Canvas columns={2} withSource="open">
   <Story
     name="button-primary-big"
     args={{
@@ -36,9 +36,6 @@ And `variant` prop:
   >
     {Template.bind({})}
   </Story>
-</Canvas>
-
-<Canvas>
   <Story
     name="button-primary-small"
     args={{
@@ -51,7 +48,8 @@ And `variant` prop:
   </Story>
 </Canvas>
 
-<Canvas>
+
+<Canvas columns={2} withSource="open">
   <Story
     name="button-secondary-big"
     args={{
@@ -62,9 +60,6 @@ And `variant` prop:
   >
     {Template.bind({})}
   </Story>
-</Canvas>
-
-<Canvas>
   <Story
     name="button-secondary-small"
     args={{
@@ -77,7 +72,7 @@ And `variant` prop:
   </Story>
 </Canvas>
 
-<Canvas>
+<Canvas columns={2} withSource="open">
   <Story
     name="button-warning-big"
     args={{
@@ -88,9 +83,6 @@ And `variant` prop:
   >
     {Template.bind({})}
   </Story>
-</Canvas>
-
-<Canvas>
   <Story
     name="button-warning-small"
     args={{

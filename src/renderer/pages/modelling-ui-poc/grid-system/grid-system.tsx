@@ -46,12 +46,12 @@ const GridSystem = () => {
     cssControls.update();
 
     const scene = new Scene();
-    scene.background = new Color(COLORS.BLACK);
+    scene.background = new Color(COLORS.PRIMARY);
 
     const grid = new InfiniteGrid({
       spacingX: 10,
       spacingY: 10,
-      color: new Color(COLORS.DARK),
+      color: new Color(COLORS.GRAY_DARK),
       distance: 1000,
     });
 
