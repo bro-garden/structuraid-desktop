@@ -4,12 +4,12 @@ import { buildStylesFor } from './helper';
 
 const Button = ({
   className,
-  type = 'primary',
+  as = 'primary',
   variant = 'big',
   disabled = false,
   children,
 }: ButtonProps) => {
-  const styles = buildStylesFor(type, variant, disabled);
+  const styles = buildStylesFor(as, variant, disabled);
 
   return (
     <button className={`${styles} ${className || ''}`} disabled={disabled}>

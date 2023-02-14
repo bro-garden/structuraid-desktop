@@ -1,13 +1,13 @@
 import type { ButtonVariants, ButtonType } from '../types';
 
 const buildStylesFor = (
-  type: ButtonType,
+  as: ButtonType,
   variant: ButtonVariants,
   disabled: boolean
 ): string => {
   let styles = ['font-sans transition rounded-sm border'];
 
-  switch (type) {
+  switch (as) {
     case 'primary':
       styles = styles.concat(
         ['text-primary'],
@@ -57,7 +57,7 @@ const buildStylesFor = (
       }
       break;
     default:
-      throw new Error("'type' prop does not have a valid value");
+      throw new Error("'as' prop does not have a valid value");
   }
 
   if (disabled) {

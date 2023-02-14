@@ -6,7 +6,7 @@ export type ButtonVariants = 'big' | 'big-full-w' | 'small' | 'small-full-w';
 export interface ButtonProps {
   className?: string;
   children: ReactNode;
-  type?: ButtonType;
+  as?: ButtonType;
   variant?: ButtonVariants;
   disabled?: boolean;
 }
