@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
-export { default as buildStylesFor } from './buildStylesFor';
+export { default as buildStylesForButton } from './buildStylesForButton';
+export { default as buildStylesForAnchor } from './buildStylesForAnchor';

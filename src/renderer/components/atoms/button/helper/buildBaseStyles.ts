@@ -1,6 +1,6 @@
 import type { ButtonVariants, ButtonType } from '../types';
 
-const buildStylesFor = (
+const buildBaseStyles = (
   as: ButtonType,
   variant: ButtonVariants,
   disabled: boolean
@@ -60,9 +60,9 @@ const buildStylesFor = (
       throw new Error("'as' prop does not have a valid value");
   }
 
-  if (disabled) {
-    styles = styles.concat(['disabled:opacity-40']);
-  }
+  // if (disabled) {
+  //   styles = styles.concat(['disabled:opacity-40']);
+  // }
 
   switch (variant) {
     case 'big':
@@ -76,4 +76,4 @@ const buildStylesFor = (
   }
 };
 
-export default buildStylesFor;
+export default buildBaseStyles;
