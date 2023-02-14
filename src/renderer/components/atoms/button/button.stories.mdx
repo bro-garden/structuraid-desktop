@@ -31,7 +31,7 @@ And `variant` prop:
     args={{
       type: "primary",
       variant: "big",
-      label: "Open project..."
+      children: "Open project..."
     }}
   >
     {Template.bind({})}
@@ -41,21 +41,17 @@ And `variant` prop:
     args={{
       type: "primary",
       variant: "small",
-      label: "Open footing design"
+      children: "Open footing design"
     }}
   >
     {Template.bind({})}
   </Story>
-</Canvas>
-
-
-<Canvas columns={2} withSource="open">
   <Story
     name="button-secondary-big"
     args={{
       type: "secondary",
       variant: "big",
-      label: "Run all checks"
+      children: "Run all checks"
     }}
   >
     {Template.bind({})}
@@ -65,20 +61,17 @@ And `variant` prop:
     args={{
       type: "secondary",
       variant: "small",
-      label: "Run all checks"
+      children: "Run all checks"
     }}
   >
     {Template.bind({})}
   </Story>
-</Canvas>
-
-<Canvas columns={2} withSource="open">
   <Story
     name="button-warning-big"
     args={{
       type: "warning",
       variant: "big",
-      label: "Delete footing"
+      children: "Delete footing"
     }}
   >
     {Template.bind({})}
@@ -88,32 +81,32 @@ And `variant` prop:
     args={{
       type: "warning",
       variant: "small",
-      label: "Delete footing"
+      children: "Delete footing"
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-And there is an `disabled` boolean prop:
 
+And there is a `disabled` boolean prop:
 
-<Canvas columns={3}>
+<Canvas columns={3} withSource="open">
   <Story
-    name="button-primary-big-disabled"
+    name="button-primary-small-disabled"
     argTypes={{
       disabled: {control: 'boolean'},
     }}
     args={{
       type: "primary",
-      variant: "big",
+      variant: "small",
       disabled: true,
-      label: "Run all checks"
+      children: "Run all checks"
     }}
   >
     {Template.bind({})}
   </Story>
-    <Story
+  <Story
     name="button-secondary-small-disabled"
     argTypes={{
       disabled: {control: 'boolean'},
@@ -122,7 +115,21 @@ And there is an `disabled` boolean prop:
       type: "secondary",
       variant: "small",
       disabled: true,
-      label: "Run all checks"
+      children: "Run all checks"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="button-warning-small-disabled"
+    argTypes={{
+      disabled: {control: 'boolean'},
+    }}
+    args={{
+      type: "warning",
+      variant: "small",
+      disabled: true,
+      children: "Delete footing"
     }}
   >
     {Template.bind({})}

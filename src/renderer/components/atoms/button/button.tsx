@@ -4,7 +4,6 @@ import { buildStylesFor } from './helper';
 
 const Button = ({
   className,
-  label,
   type = 'primary',
   variant = 'big',
   disabled = false,
@@ -14,7 +13,7 @@ const Button = ({
 
   return (
     <button className={`${styles} ${className || ''}`} disabled={disabled}>
-      {label || children}
+      {children}
     </button>
   );
 };
