@@ -1,3 +1,4 @@
+// any modification that is done in this file must be mirrored in tailwind.config.js as well.
 export default {
   RED: '#ff0000',
   GREEN: '#00ff00',

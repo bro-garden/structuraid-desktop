@@ -5,6 +5,7 @@ module.exports = {
       sans: ['Nunito', 'sans-serif'],
       serif: ['Libre Baskerville ', 'serif'],
     },
+    // any modification that is done in this file must be mirrored in src/renderer/constants/colors.ts as well.
     colors: {
       red: '#ff0000',
       green: '#00ff00',
