@@ -1,0 +1,14 @@
+{
+  "rules": [
+    {
+      "files": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.mdx",
+        "src/**/*.ejs"
+      ],
+      "naming": "lowercase-dash",
+      "level": "error"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import type { TextUsage, TextColor } from '../types';
 import { DOCUMENT_VARIANTS, INTERFACE_VARIANTS } from './constants';
-import buildTextColorForInterface from './buildTextColorForInterface';
-import buildTextColorForDocument from './buildTextColorForDocument';
+import buildTextColorForInterface from './build-text-color-for-interface';
+import buildTextColorForDocument from './build-text-color-for-document';
 
 const returnTextColor = (as: TextUsage, color: TextColor) => {
   if (DOCUMENT_VARIANTS.includes(as)) {
