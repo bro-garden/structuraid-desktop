@@ -1,6 +1,6 @@
 /* eslint-disable  react/jsx-props-no-spreading */
 /* eslint-disable  react/button-has-type */
-import type { SimpleButtonProps } from './types';
+import type { ButtonProps } from './types';
 import { buildStylesForButton } from './helper';
 
 const Button = ({
@@ -10,7 +10,7 @@ const Button = ({
   disabled = false,
   children,
   ...props
-}: SimpleButtonProps) => {
+}: ButtonProps) => {
   const styles = buildStylesForButton(as, variant, disabled);
 
   return (

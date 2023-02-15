@@ -60,10 +60,6 @@ const buildBaseStyles = (
       throw new Error("'as' prop does not have a valid value");
   }
 
-  // if (disabled) {
-  //   styles = styles.concat(['disabled:opacity-40']);
-  // }
-
   switch (variant) {
     case 'big':
       styles = styles.concat(['text-xs'], ['py-3'], ['px-6']);
