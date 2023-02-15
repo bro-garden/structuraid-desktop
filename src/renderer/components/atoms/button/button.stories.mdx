@@ -27,6 +27,82 @@ Also, can be used one of thes options for `useTag`prop:
 - `button`
 - `anchor`
 
+##  How it looks with dark background
+
+<Canvas columns={2} style={{ background: '#0F253E' }}>
+  <Story
+    name="button-primary-big-dark-background"
+    args={{
+      useTag:"button",
+      as: "primary",
+      variant: "big",
+      type: "submit",
+      children: "Open project..."
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-primary-small-dark-background"
+    args={{
+      useTag:"anchor",
+      as: "primary",
+      variant: "small",
+      children: "Open footing design"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="button-secondary-big-dark-background"
+    args={{
+      useTag:"button",
+      as: "secondary",
+      variant: "big",
+      children: "Run all checks",
+      disabled: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-secondary-small-dark-background"
+    args={{
+      useTag:"anchor",
+      as: "secondary",
+      variant: "small",
+      children: "Run all checks",
+      disabled: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="button-warning-big-dark-background"
+    args={{
+      useTag:"button",
+      as: "warning",
+      variant: "big",
+      children: "Delete footing",
+      disabled: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-warning-small-dark-background"
+    args={{
+      useTag:"anchor",
+      as: "warning",
+      variant: "small",
+      children: "Delete footing",
+      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 
 ##  Use with a button tag
 
