@@ -91,6 +91,11 @@ module.exports = {
         },
       ],
     },
+    extend: {
+      boxShadow: {
+        'md-center': '0px 2px 8px 0px rgba(0, 0, 0, 0.4)',
+      },
+    },
   },
   variants: {},
   plugins: [],

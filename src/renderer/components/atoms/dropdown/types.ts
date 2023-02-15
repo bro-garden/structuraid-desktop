@@ -1,9 +1,13 @@
-export interface Item<T> {
+export interface Item {
+  id: string;
   label: string;
-  value: T;
+  value: unknown;
 }
 
-export interface DropdownProps<T> {
-  color: 'light' | 'dark';
-  items: Item<T>[];
+export interface DropdownProps {
+  items: Item[];
+  color?: 'light' | 'dark';
+  className?: string;
+  selectedItem?: Item;
+  onSelect?: (item: Item) => void;
 }
