@@ -3,15 +3,17 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
 import Button from './button';
+import AnchorButton from './anchor_button';
 
-<Meta title="Atoms/Button" argTypes={{ onClick: { action: 'clicked' } }} component={Button} />
+<Meta title="Atoms/Button" />
 
 export const Template = (args) => <Button {...args} />;
+export const TemplateAnchorButton = (args) => <AnchorButton {...args} />;
 
 
 # Button
 
-This is `Button` atom. Structuraid has tree option, defined with `as` prop:
+Structuraid has three options, defined with `as` prop:
 
 - `primary`
 - `secondary`
@@ -22,13 +24,20 @@ And `variant` prop:
 - `big`
 - `small`
 
+*Note:* if needed, there can be used a HTML button, a HTML anchor or a react-router Link. by implementing:
+
+- `<Button {...props}>{children}</Button>`
+- `<AnchorButton {...props}>{children}</AnchorButton>`
+- `<LinkButton {...props}>{children}</LinkButton>`
+
 ##  How it looks with dark background
+
+for enabled buttons
 
 <Canvas columns={2} style={{ background: '#0F253E' }}>
   <Story
     name="button-primary-big-dark-background"
     args={{
-      useTag:"button",
       as: "primary",
       variant: "big",
       type: "submit",
@@ -40,74 +49,19 @@ And `variant` prop:
   <Story
     name="anchor-primary-small-dark-background"
     args={{
-      useTag:"anchor",
       as: "primary",
       variant: "small",
-      children: "Open footing design"
+      children: "Open footing design",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2"
     }}
   >
-    {Template.bind({})}
+    {TemplateAnchorButton.bind({})}
   </Story>
   <Story
-    name="button-secondary-big-dark-background"
+    name="button-secondary-small-dark-background"
     args={{
-      useTag:"button",
-      as: "secondary",
-      variant: "big",
-      children: "Run all checks",
-      disabled: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-  <Story
-    name="anchor-secondary-small-dark-background"
-    args={{
-      useTag:"anchor",
       as: "secondary",
       variant: "small",
-      children: "Run all checks",
-      disabled: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-  <Story
-    name="button-warning-big-dark-background"
-    args={{
-      useTag:"button",
-      as: "warning",
-      variant: "big",
-      children: "Delete footing",
-      disabled: true
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-  <Story
-    name="anchor-warning-small-dark-background"
-    args={{
-      useTag:"anchor",
-      as: "warning",
-      variant: "small",
-      children: "Delete footing",
-      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-
-##  Examples
-
-<Canvas columns={2} withSource="open">
-  <Story
-    name="button-primary-big"
-    args={{
-      useTag:"button",
-      as: "primary",
-      variant: "big",
       type: "submit",
       children: "Open project..."
     }}
@@ -115,109 +69,234 @@ And `variant` prop:
     {Template.bind({})}
   </Story>
   <Story
-    name="button-primary-small"
+    name="anchor-secondary-big-dark-background"
     args={{
-      useTag:"button",
+      as: "secondary",
+      variant: "big",
+      children: "Open footing design",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {TemplateAnchorButton.bind({})}
+  </Story>
+  <Story
+    name="button-warning-big-dark-background"
+    args={{
+      as: "warning",
+      variant: "big",
+      type: "submit",
+      children: "Delete footing"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-warning-small-dark-background"
+    args={{
+      as: "warning",
+      variant: "small",
+      children: "Delete footing",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {TemplateAnchorButton.bind({})}
+  </Story>
+</Canvas>
+
+for disabled buttons
+
+<Canvas columns={3} style={{ background: '#0F253E' }}>
+  <Story
+    name="button-primary-big-dark-background-disabled"
+    args={{
       as: "primary",
-      variant: "small",
-      children: "Open footing design"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-  <Story
-    name="button-secondary-big"
-    args={{
-      useTag:"button",
-      as: "secondary",
       variant: "big",
-      children: "Run all checks"
+      type: "submit",
+      children: "Open project...",
+      disabled: true
     }}
   >
     {Template.bind({})}
   </Story>
   <Story
-    name="button-secondary-small"
+    name="anchor-secondary-small-dark-background-disabled"
     args={{
-      useTag:"button",
       as: "secondary",
       variant: "small",
-      children: "Run all checks"
+      children: "Open footing design",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2",
+      disabled: true
     }}
   >
-    {Template.bind({})}
+    {TemplateAnchorButton.bind({})}
   </Story>
   <Story
-    name="button-warning-big"
+    name="anchor-warning-small-dark-background-disabled"
     args={{
-      useTag:"button",
-      as: "warning",
-      variant: "big",
-      children: "Delete footing"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-  <Story
-    name="button-warning-small"
-    args={{
-      useTag:"button",
       as: "warning",
       variant: "small",
-      children: "Delete footing"
+      children: "Delete footing",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2",
+      disabled: true
     }}
   >
-    {Template.bind({})}
+    {TemplateAnchorButton.bind({})}
   </Story>
 </Canvas>
 
 
-And there is a `disabled` boolean prop:
+##  Examples
 
-<Canvas columns={3} withSource="open">
+Using `as='primary'` for both: AnchorButton and Button, enabled or not, and big or small
+
+<Canvas columns={4} withSource="open">
   <Story
-    name="button-primary-small-disabled"
-    argTypes={{
-      disabled: {control: 'boolean'},
-    }}
+    name="anchor-primary-big"
     args={{
-      useTag:"button",
+      as: "primary",
+      variant: "big",
+      children: "Delete footing",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {TemplateAnchorButton.bind({})}
+  </Story>
+  <Story
+    name="button-primary-small"
+    args={{
       as: "primary",
       variant: "small",
-      disabled: true,
-      children: "Run all checks"
+      type: "submit",
+      children: "Run checks"
     }}
   >
     {Template.bind({})}
   </Story>
   <Story
-    name="button-secondary-small-disabled"
-    argTypes={{
-      disabled: {control: 'boolean'},
-    }}
+    name="button-primary-big-disabled"
     args={{
-      useTag:"button",
+      as: "primary",
+      variant: "big",
+      type: "submit",
+      children: "Run checks",
+      disabled: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-primary-small-disabled"
+    args={{
+      as: "primary",
+      variant: "small",
+      children: "Delete footing",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2",
+      disabled: true
+    }}
+  >
+    {TemplateAnchorButton.bind({})}
+  </Story>
+</Canvas>
+
+
+Using `as='secondary'` for both: AnchorButton and Button, enabled or not, and big or small
+
+<Canvas columns={4} withSource="open">
+  <Story
+    name="anchor-secondary-big"
+    args={{
+      as: "secondary",
+      variant: "big",
+      children: "Delete footing",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {TemplateAnchorButton.bind({})}
+  </Story>
+  <Story
+    name="button-secondary-small"
+    args={{
       as: "secondary",
       variant: "small",
-      disabled: true,
-      children: "Run all checks"
+      type: "submit",
+      children: "Run checks"
     }}
   >
     {Template.bind({})}
   </Story>
   <Story
-    name="button-warning-small-disabled"
-    argTypes={{
-      disabled: {control: 'boolean'},
-    }}
+    name="button-secondary-big-disabled"
     args={{
-      useTag:"button",
-      as: "warning",
-      variant: "small",
-      disabled: true,
-      children: "Delete footing"
+      as: "secondary",
+      variant: "big",
+      type: "submit",
+      children: "Run checks",
+      disabled: true
     }}
   >
     {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-secondary-small-disabled"
+    args={{
+      as: "secondary",
+      variant: "small",
+      children: "Delete footing",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2",
+      disabled: true
+    }}
+  >
+    {TemplateAnchorButton.bind({})}
+  </Story>
+</Canvas>
+
+Using `as='warning'` for both: AnchorButton and Button, enabled or not, and big or small
+
+<Canvas columns={4} withSource="open">
+  <Story
+    name="anchor-warning-big"
+    args={{
+      as: "warning",
+      variant: "big",
+      children: "Delete footing",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {TemplateAnchorButton.bind({})}
+  </Story>
+  <Story
+    name="button-warning-small"
+    args={{
+      as: "warning",
+      variant: "small",
+      type: "submit",
+      children: "Run checks"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="button-warning-big-disabled"
+    args={{
+      as: "warning",
+      variant: "big",
+      type: "submit",
+      children: "Run checks",
+      disabled: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-warning-small-disabled"
+    args={{
+      as: "warning",
+      variant: "small",
+      children: "Delete footing",
+      href: "https://github.com/orgs/PradaIng/projects/3/views/2",
+      disabled: true
+    }}
+  >
+    {TemplateAnchorButton.bind({})}
   </Story>
 </Canvas>
