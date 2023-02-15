@@ -8,13 +8,10 @@ import Button from './button';
 
 export const Template = (args) => <Button {...args} />;
 
+
 # Button
 
-
-##  Usage for App UI
-
-This is `Button` atom, used to insert text in our software UI. 
-We have 2 types of interface's text, indicated by `type` prop:
+This is `Button` atom. Structuraid has tree option, defined with `as` prop:
 
 - `primary`
 - `secondary`
@@ -24,6 +21,16 @@ And `variant` prop:
 
 - `big`
 - `small`
+
+Also, can be used one of thes options for `useTag`prop:
+
+- `button`
+- `anchor`
+
+
+##  Use with a button tag
+
+`useTag='button'`
 
 <Canvas columns={2} withSource="open">
   <Story
@@ -145,3 +152,138 @@ And there is a `disabled` boolean prop:
     {Template.bind({})}
   </Story>
 </Canvas>
+
+##  Use with an anchor tag
+
+`useTag='anchor'`
+
+<Canvas columns={2} withSource="open">
+  <Story
+    name="anchor-primary-big"
+    args={{
+      useTag:"anchor",
+      as: "primary",
+      variant: "big",
+      type: "submit",
+      children: "Open project...",
+      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-primary-small"
+    args={{
+      useTag:"anchor",
+      as: "primary",
+      variant: "small",
+      children: "Open footing design",
+      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-secondary-big"
+    args={{
+      useTag:"anchor",
+      as: "secondary",
+      variant: "big",
+      children: "Run all checks",
+      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-secondary-small"
+    args={{
+      useTag:"anchor",
+      as: "secondary",
+      variant: "small",
+      children: "Run all checks",
+      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-warning-big"
+    args={{
+      useTag:"anchor",
+      as: "warning",
+      variant: "big",
+      children: "Delete footing",
+      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-warning-small"
+    args={{
+      useTag:"anchor",
+      as: "warning",
+      variant: "small",
+      children: "Delete footing",
+      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+And there is a `disabled` boolean prop:
+
+<Canvas columns={3} withSource="open">
+  <Story
+    name="anchor-primary-small-disabled"
+    argTypes={{
+      disabled: {control: 'boolean'},
+    }}
+    args={{
+      useTag:"anchor",
+      as: "primary",
+      variant: "small",
+      disabled: true,
+      children: "Run all checks",
+      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-secondary-small-disabled"
+    argTypes={{
+      disabled: {control: 'boolean'},
+    }}
+    args={{
+      useTag:"anchor",
+      as: "secondary",
+      variant: "small",
+      disabled: true,
+      children: "Run all checks",
+      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="anchor-warning-small-disabled"
+    argTypes={{
+      disabled: {control: 'boolean'},
+    }}
+    args={{
+      useTag:"anchor",
+      as: "warning",
+      variant: "small",
+      disabled: true,
+      children: "Delete footing",
+      hRef: "https://github.com/orgs/PradaIng/projects/3/views/2"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
