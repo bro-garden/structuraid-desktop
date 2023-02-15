@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 
 import type { LinkButtonProps } from './types';
-import { buildStylesForLink } from './helper';
+import { buildStylesForAnchorOrLink } from './helper';
 
 const LinkButton = ({
   className,
@@ -12,7 +12,7 @@ const LinkButton = ({
   children,
   ...props
 }: LinkButtonProps) => {
-  const styles = buildStylesForLink(as, variant, disabled);
+  const styles = buildStylesForAnchorOrLink(as, variant, disabled);
 
   return (
     <Link className={`${styles} ${className || ''}`} {...props}>

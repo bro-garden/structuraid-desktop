@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import type { AnchorProps } from './types';
-import { buildStylesForAnchor } from './helper';
+import { buildStylesForAnchorOrLink } from './helper';
 
 const AnchorButton = ({
   className,
@@ -10,7 +10,7 @@ const AnchorButton = ({
   children,
   ...props
 }: AnchorProps) => {
-  const styles = buildStylesForAnchor(as, variant, disabled);
+  const styles = buildStylesForAnchorOrLink(as, variant, disabled);
 
   return (
     <a className={`${styles} ${className || ''}`} {...props}>

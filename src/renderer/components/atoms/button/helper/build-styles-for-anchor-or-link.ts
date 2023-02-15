@@ -1,7 +1,7 @@
 import type { ButtonVariants, ButtonType } from '../types';
 import buildBaseStyles from './build-base-styles';
 
-const buildStylesForLink = (
+const buildStylesForAnchorOrLink = (
   as: ButtonType,
   variant: ButtonVariants,
   disabled: boolean
@@ -15,4 +15,4 @@ const buildStylesForLink = (
   return baseStyle;
 };
 
-export default buildStylesForLink;
+export default buildStylesForAnchorOrLink;
