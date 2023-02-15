@@ -6,6 +6,9 @@ module.exports = {
       serif: ['Libre Baskerville ', 'serif'],
     },
     colors: {
+      red: '#ff0000',
+      green: '#00ff00',
+      blue: '#0000ff',
       primary: '#0F253E',
       secondary: '#1D4A7C',
       'soft-blue': '#91CFDE',
