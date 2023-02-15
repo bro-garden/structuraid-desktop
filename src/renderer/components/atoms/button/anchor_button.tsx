@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/button-has-type */
 import type { AnchorProps } from './types';
 import { buildStylesForAnchor } from './helper';
 

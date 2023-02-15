@@ -6,7 +6,7 @@ import type {
 
 export type TagOptions = 'button' | 'link' | 'anchor';
 export type ButtonType = 'primary' | 'secondary' | 'warning';
-export type ButtonVariants = 'big' | 'big-full-w' | 'small' | 'small-full-w';
+export type ButtonVariants = 'big' | 'small';
 
 export interface ButtonProps {
   useTag: TagOptions;
@@ -17,15 +17,14 @@ export interface ButtonProps {
 export interface SimpleButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  children: ReactNode | string;
+  children: ReactNode;
   as?: ButtonType;
   variant?: ButtonVariants;
-  disabled?: boolean;
 }
 
 export interface AnchorProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
-  children: ReactNode | string;
+  children: ReactNode;
   as?: ButtonType;
   variant?: ButtonVariants;
   disabled?: boolean;

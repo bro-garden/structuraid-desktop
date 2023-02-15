@@ -1,18 +1,27 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/button-has-type */
-import type { ButtonProps } from './types';
-import SimpleButton from './simpleButton';
-import AnchorButton from './anchorButton';
+/* eslint-disable  react/jsx-props-no-spreading */
+/* eslint-disable  react/button-has-type */
+import type { SimpleButtonProps } from './types';
+import { buildStylesForButton } from './helper';
 
-const Button = ({ useTag, children, ...props }: ButtonProps) => {
-  switch (useTag) {
-    case 'anchor':
-      return <AnchorButton {...props}>{children}</AnchorButton>;
-    case 'button':
-      return <SimpleButton {...props}>{children}</SimpleButton>;
-    default:
-      return <></>;
-  }
+const Button = ({
+  className,
+  as = 'primary',
+  variant = 'big',
+  disabled = false,
+  children,
+  ...props
+}: SimpleButtonProps) => {
+  const styles = buildStylesForButton(as, variant, disabled);
+
+  return (
+    <button
+      className={`${styles} ${className || ''}`}
+      disabled={disabled}
+      {...props}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;
