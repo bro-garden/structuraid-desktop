@@ -8,6 +8,6 @@ export interface DropdownProps {
   items: Item[];
   color?: 'light' | 'dark';
   className?: string;
-  selectedItem?: Item;
+  selected?: string;
   onSelect?: (item: Item) => void;
 }

@@ -31,21 +31,27 @@ The component supports being used in a light or dark background, specifying the 
 
 This is the default style, it is compact, use it when the component is being used along with other inputs in a long form
 
+## Light version
+
 <Canvas withSource="open">
   <Story
     name="light"
     args={{
       color: 'light',
       items: [{
+        id: 'item_1',
         label: "Item 1",
         value: 1
       }, {
+        id: 'item_2',
         label: "Item 2",
         value: 2
       }, {
+        id: 'item_3',
         label: "Item 3",
         value: 3
       }, {
+        id: 'item_4',
         label: "Item 4",
         value: 4
       }]
@@ -54,6 +60,8 @@ This is the default style, it is compact, use it when the component is being use
     {Template.bind({})}
   </Story>
 </Canvas>
+
+## Dark version
 
 <Canvas withSource="open">
   <Story
@@ -74,6 +82,39 @@ This is the default style, it is compact, use it when the component is being use
         value: 3
       }, {
         id: "item_4",
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Controls
+
+The component can be controlled by using the `selected` and `onSelect` props.
+
+<Canvas withSource="open">
+  <Story
+    name="controlled"
+    args={{
+      selected: 'item_1',
+      onSelect: (item) => alert(JSON.stringify(item)),
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
         label: "Item 4",
         value: 4
       }]
