@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { on } from 'events';
 import type { Item, DropdownProps } from './types';
 
 const Dropdown = ({
