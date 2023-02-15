@@ -1,3 +1,3 @@
-export { default as buildStylesForAnchor } from './build_styles_for_anchor';
-export { default as buildStylesForButton } from './build_styles_for_button';
-export { default as buildStylesForLink } from './build_styles_for_link';
+export { default as buildStylesForAnchor } from './build-styles-for-anchor';
+export { default as buildStylesForButton } from './build-styles-for-button';
+export { default as buildStylesForLink } from './build-styles-for-link';
