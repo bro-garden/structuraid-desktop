@@ -10,10 +10,10 @@ const Text = ({
 }: TextProps) => {
   const Element = resolveElement(as);
   const styles = buildStylesFor(variant, as);
-  const TextColor = returnTextColor(as, color);
+  const textColor = returnTextColor(as, color);
 
   return (
-    <Element className={`${styles} ${TextColor} ${className || ''}`}>
+    <Element className={`${styles} ${textColor} ${className || ''}`}>
       {children}
     </Element>
   );

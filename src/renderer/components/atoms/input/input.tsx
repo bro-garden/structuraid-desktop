@@ -18,9 +18,9 @@ const Input = ({
   styles.push(as === 'one-liner' ? oneLinerStyles : roundedStyles);
 
   const lightStyles =
-    'text-primary placeholder:text-gray-soft border-gray-soft hover:border-light-blue focus:border-light-blue';
+    'text-primary placeholder:text-gray-soft border-gray-soft hover:border-soft-blue focus:border-soft-blue';
   const darkStyles =
-    'text-light-blue caret-light-blue placeholder:text-gray-soft border-gray-soft hover:border-blue-white focus:border-blue-white';
+    'text-primary caret-soft-blue placeholder:text-gray-soft border-gray-soft hover:border-soft-blue focus:border-soft-blue';
   styles.push(color === 'light' ? lightStyles : darkStyles);
 
   if (disabled) {
