@@ -1,5 +1,5 @@
 import type { ButtonVariants, ButtonType } from '../types';
-import buildBaseStyles from './buildBaseStyles';
+import buildBaseStyles from './build_base_styles';
 
 const buildStylesForAnchor = (
   as: ButtonType,
@@ -7,11 +7,12 @@ const buildStylesForAnchor = (
   disabled: boolean
 ): string => {
   let baseStyle = buildBaseStyles(as, variant, disabled);
-  baseStyle = `${baseStyle} no-underline visited:no-underline`;
+  baseStyle = `${baseStyle} w-auto inline-block text-center no-underline visited:no-underline`;
 
-  if (disabled) return `${baseStyle} opacity-40`;
+  if (disabled)
+    return `${baseStyle} pointer-events-none cursor-default opacity-40`;
 
-  return `${baseStyle} cursor-pointer`;
+  return baseStyle;
 };
 
 export default buildStylesForAnchor;

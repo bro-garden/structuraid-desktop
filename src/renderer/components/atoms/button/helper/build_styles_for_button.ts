@@ -1,5 +1,5 @@
 import type { ButtonVariants, ButtonType } from '../types';
-import buildBaseStyles from './buildBaseStyles';
+import buildBaseStyles from './build_base_styles';
 
 const buildStylesForButton = (
   as: ButtonType,
