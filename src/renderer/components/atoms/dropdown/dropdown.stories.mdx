@@ -1,0 +1,54 @@
+<!-- Input.stories.mdx -->
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { COLORS } from '../../../constants'
+
+import Dropdown from './dropdown';
+
+<Meta title="Atoms/Dropdown" component={Dropdown} />
+
+export const Template = (args) => {
+  return (
+    <div style={{
+      padding: '30px',
+      background: args.color === 'dark' ? COLORS.DARK_BLUE : COLORS.WHITE_BLUE
+    }}>
+      <Dropdown {...args} />
+    </div>
+  )
+};
+
+# Dropdown
+
+##  Usage
+
+This is `Dropdown` atom, used to insert an selectable list of items in the UI.
+
+The component supports being used in a light or dark background, specifying the `color` prop:
+
+- `light`
+- `dark`
+
+This is the default style, it is compact, use it when the component is being used along with other inputs in a long form
+
+<Canvas withSource="open">
+  <Story
+    name="light"
+    args={{
+      color: 'light'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="dark"
+    args={{
+      color: 'dark'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
