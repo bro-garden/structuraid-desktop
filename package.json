@@ -66,6 +66,9 @@
     ],
     "*.{html,md,yml}": [
       "prettier --ignore-path .eslintignore --single-quote --write"
+    ],
+    "*": [
+      "npm run fs-lint"
     ]
   },
   "prettier": {
