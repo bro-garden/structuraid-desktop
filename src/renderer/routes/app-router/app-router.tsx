@@ -7,6 +7,7 @@ import {
   ProceduralText,
   GridSystem,
   Ucs,
+  Columns2D,
 } from 'renderer/pages/modelling-ui-poc';
 
 const AppRouter = () => {
@@ -34,6 +35,10 @@ const AppRouter = () => {
         <Route
           path={ROUTES.MODELLING_UI_POC.GRID_SYSTEM}
           element={<GridSystem />}
+        />
+        <Route
+          path={ROUTES.MODELLING_UI_POC.COLUMNS_2D}
+          element={<Columns2D />}
         />
       </Routes>
     </Router>

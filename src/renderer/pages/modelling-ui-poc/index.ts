@@ -6,3 +6,4 @@ export { default as DrawingLines } from './drawing-lines';
 export { default as ProceduralText } from './procedural-text';
 export { default as GridSystem } from './grid-system';
 export { default as Ucs } from './ucs';
+export { default as Columns2D } from './columns-2d';

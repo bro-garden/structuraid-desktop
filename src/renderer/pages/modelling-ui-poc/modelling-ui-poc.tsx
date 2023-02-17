@@ -41,6 +41,12 @@ const ModellingUiPoc = () => {
         >
           Grid System
         </Link>
+        <Link
+          to={ROUTES.MODELLING_UI_POC.COLUMNS_2D}
+          className="font-bold text-xl hover:text-blue-500 transition-all"
+        >
+          2D Columns
+        </Link>
       </ul>
     </div>
   );

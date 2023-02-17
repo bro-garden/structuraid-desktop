@@ -3,7 +3,6 @@ import { WebGLRenderer, PerspectiveCamera, Scene, Color } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import invariant from 'tiny-invariant';
 import { InfiniteGrid } from 'renderer/three/components';
-import { CSS3DRenderer } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import { COLORS } from 'renderer/constants';
 
 const GridSystem = () => {
@@ -19,17 +18,6 @@ const GridSystem = () => {
 
     webglContainerEl.appendChild(renderer.domElement);
 
-    const cssContainerEl = document.querySelector('.css-wrapper');
-    invariant(cssContainerEl, 'could not find container tag');
-
-    const cssRenderer = new CSS3DRenderer();
-    cssRenderer.setSize(
-      cssContainerEl.clientWidth,
-      cssContainerEl.clientHeight
-    );
-
-    cssContainerEl.appendChild(cssRenderer.domElement);
-
     const camera = new PerspectiveCamera(
       75,
       webglContainerEl.clientWidth / webglContainerEl.clientHeight,
@@ -38,12 +26,10 @@ const GridSystem = () => {
     );
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    const cssControls = new OrbitControls(camera, cssRenderer.domElement);
 
     camera.position.set(100, 100, 100);
     camera.lookAt(0, 0, 0);
     controls.update();
-    cssControls.update();
 
     const scene = new Scene();
     scene.background = new Color(COLORS.PRIMARY);
@@ -61,9 +47,7 @@ const GridSystem = () => {
       requestAnimationFrame(animate);
 
       controls.update();
-      cssControls.update();
 
-      cssRenderer.render(scene, camera);
       renderer.render(scene, camera);
     }
     animate();
@@ -74,7 +58,6 @@ const GridSystem = () => {
       <h1 className="font-bold text-blue-500 text-6xl mb-6">Grid System</h1>
 
       <div className="canvas-wrapper h-screen relative">
-        <div className="css-wrapper w-full h-screen absolute left-0 top-0 z-10" />
         <div className="webgl-wrapper w-full h-screen absolute left-0 top-0 z-0" />
       </div>
     </div>
