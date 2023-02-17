@@ -14,7 +14,7 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path={ROUTES.ROOT} element={<Columns2D />} />
+        <Route path={ROUTES.ROOT} element={<Home />} />
         <Route
           path={ROUTES.MODELLING_UI_POC.ROOT}
           element={<ModellingUiPoc />}

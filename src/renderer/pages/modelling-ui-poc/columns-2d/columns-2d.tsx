@@ -1,11 +1,5 @@
 import { useEffect } from 'react';
-import {
-  WebGLRenderer,
-  OrthographicCamera,
-  Scene,
-  Color,
-  Vector2,
-} from 'three';
+import { WebGLRenderer, OrthographicCamera, Scene, Color } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import invariant from 'tiny-invariant';
 import { InfiniteGrid, ModelGrid } from 'renderer/three/components';
