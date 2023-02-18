@@ -44,7 +44,7 @@ class ModelAxisLabel {
 
   static #buildCircle(position: Vector2) {
     const geometry = new CircleGeometry(LABEL_SIZE / 2, CIRCLE_SEGMENTS);
-    const material = new MeshBasicMaterial({ color: COLORS.GRAY40 });
+    const material = new MeshBasicMaterial({ color: COLORS.GRAY_SOFT });
 
     const circle = new Mesh(geometry, material);
 
@@ -60,7 +60,7 @@ class ModelAxisLabel {
   ) {
     const labelEl = document.createElement('div');
     labelEl.style.fontSize = LABEL_FONT_SIZE;
-    labelEl.style.color = COLORS.BLACK;
+    labelEl.style.color = COLORS.PRIMARY;
     labelEl.textContent = label;
 
     containerEl.appendChild(labelEl);
