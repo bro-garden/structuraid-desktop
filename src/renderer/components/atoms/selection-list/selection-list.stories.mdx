@@ -93,14 +93,46 @@ This is the default style, it is compact, use it when the component is being use
 
 ## Controls
 
-The component can be controlled by using the `selected` and `onSelect` props.
+The component can be controlled by using the `selection` and `onSelect` props.
 
 <Canvas withSource="open">
   <Story
     name="controlled"
     args={{
-      selected: 'item_1',
+      selection: 'item_1',
       onSelect: (item) => alert(JSON.stringify(item)),
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Multiple Selection
+
+The `multiple` prop enables the selection of multiple items
+
+<Canvas withSource="open">
+  <Story
+    name="multiple selection"
+    args={{
+      multiple: true,
       items: [{
         id: 'item_1',
         label: "Item 1",

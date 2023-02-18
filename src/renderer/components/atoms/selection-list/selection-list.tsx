@@ -1,15 +1,28 @@
 import { useState } from 'react';
 import type { Item, SelectionListProps } from './types';
 
+const loadSelectedItems = (items: Item[], selection: string | string[]) => {
+  return items.filter((item) => {
+    if (typeof selection === 'string') return item.id === selection;
+
+    return selection.includes(item.id);
+  });
+};
+
+const isSelectedItem = (selectedItems: Item[] | undefined, item: Item) => {
+  return selectedItems?.some((selectedItem) => selectedItem.id === item.id);
+};
+
 const SelectionList = ({
   items,
   className,
-  selected,
+  selection,
   onSelect,
   color = 'light',
+  multiple = false,
 }: SelectionListProps) => {
-  const [selectedItem, setSelectedItem] = useState<Item | undefined>(
-    selected ? items.find((item) => item.id === selected) : undefined
+  const [selectedItems, setSelectedItems] = useState<Item[] | undefined>(
+    selection ? loadSelectedItems(items, selection) : undefined
   );
 
   let styles = 'flex flex-col rounded shadow-md-center py-2 text-xs';
@@ -20,9 +33,23 @@ const SelectionList = ({
   }
 
   const handleClick = (item: Item) => {
-    setSelectedItem(item);
+    let newSelectedItems = selectedItems ? [...selectedItems] : [];
 
-    if (onSelect) onSelect(item);
+    if (multiple) {
+      if (isSelectedItem(newSelectedItems, item)) {
+        newSelectedItems = newSelectedItems.filter(
+          (selectedItem) => selectedItem.id !== item.id
+        );
+      } else {
+        newSelectedItems.push(item);
+      }
+    } else {
+      newSelectedItems = [item];
+    }
+
+    setSelectedItems(newSelectedItems);
+
+    if (onSelect) onSelect(multiple ? newSelectedItems : item);
   };
 
   return (
@@ -30,8 +57,8 @@ const SelectionList = ({
       {items.map((item) => (
         <button
           type="button"
-          className={`text-xs py-3 px-4 text-left hover:bg-soft-blue focus:outline-none focus:bg-soft-blue transition ${
-            selectedItem?.id === item.id ? 'bg-soft-blue' : ''
+          className={`text-xs py-3 px-4 text-left hover:bg-soft-blue focus:outline-none transition ${
+            isSelectedItem(selectedItems, item) ? 'bg-soft-blue' : ''
           }`}
           key={item.id}
           onClick={() => handleClick(item)}

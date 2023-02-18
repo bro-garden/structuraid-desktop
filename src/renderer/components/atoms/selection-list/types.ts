@@ -8,6 +8,7 @@ export interface SelectionListProps {
   items: Item[];
   color?: 'light' | 'dark';
   className?: string;
-  selected?: string;
-  onSelect?: (item: Item) => void;
+  selection?: string | string[];
+  onSelect?: (items: Item | Item[]) => void;
+  multiple?: boolean;
 }
