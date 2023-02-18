@@ -1,11 +1,13 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import { ROUTES } from 'renderer/constants';
 import { Home, ModellingUiPoc } from 'renderer/pages';
+import Header from 'renderer/components/common/header/header';
 import {
   SimpleCube,
   DrawingLines,
   ProceduralText,
   GridSystem,
+  ColumnSystem,
   Ucs,
   Columns2D,
 } from 'renderer/pages/modelling-ui-poc';
@@ -13,6 +15,7 @@ import {
 const AppRouter = () => {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path={ROUTES.ROOT} element={<Home />} />
         <Route
@@ -39,6 +42,10 @@ const AppRouter = () => {
         <Route
           path={ROUTES.MODELLING_UI_POC.COLUMNS_2D}
           element={<Columns2D />}
+        />
+        <Route
+          path={ROUTES.MODELLING_UI_POC.COLUMN_SYSTEM}
+          element={<ColumnSystem />}
         />
       </Routes>
     </Router>

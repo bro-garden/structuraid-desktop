@@ -8,5 +8,6 @@ export default {
     UCS: '/modelling-ui-poc/ucs',
     GRID_SYSTEM: '/modelling-ui-poc/grid-system',
     COLUMNS_2D: '/modelling-ui-poc/columns-2d',
+    COLUMN_SYSTEM: '/modelling-ui-poc/column-system',
   },
 };
