@@ -1,0 +1,157 @@
+<!-- Input.stories.mdx -->
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { COLORS } from '../../../constants'
+
+import SelectionList from './selection-list';
+
+<Meta title="Atoms/SelectionList" component={SelectionList} />
+
+export const Template = (args) => {
+  return (
+    <div style={{
+      padding: '30px',
+      background: args.color === 'dark' ? COLORS.PRIMARY : COLORS.BLUE_WHITE
+    }}>
+      <SelectionList {...args} />
+    </div>
+  )
+};
+
+# SelectionList
+
+##  Usage
+
+This is `SelectionList` atom, used to insert an selectable list of items in the UI.
+
+The component supports being used in a light or dark background, specifying the `color` prop:
+
+- `light`
+- `dark`
+
+This is the default style, it is compact, use it when the component is being used along with other inputs in a long form
+
+## Light version
+
+<Canvas withSource="open">
+  <Story
+    name="light"
+    args={{
+      color: 'light',
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Dark version
+
+<Canvas withSource="open">
+  <Story
+    name="dark"
+    args={{
+      color: 'dark',
+      items: [{
+        id: "item_1",
+        label: "Item 1",
+        value: 1
+      }, {
+        id: "item_2",
+        label: "Item 2",
+        value: 2
+      }, {
+        id: "item_3",
+        label: "Item 3",
+        value: 3
+      }, {
+        id: "item_4",
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Controls
+
+The component can be controlled by using the `selection` and `onSelect` props.
+
+<Canvas withSource="open">
+  <Story
+    name="controlled"
+    args={{
+      selection: 'item_1',
+      onSelect: (item) => alert(JSON.stringify(item)),
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Multiple Selection
+
+The `multiple` prop enables the selection of multiple items
+
+<Canvas withSource="open">
+  <Story
+    name="multiple selection"
+    args={{
+      multiple: true,
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
