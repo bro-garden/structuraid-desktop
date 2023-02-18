@@ -4,7 +4,7 @@ export interface Item {
   value: unknown;
 }
 
-export interface DropdownProps {
+export interface SelectionListProps {
   items: Item[];
   color?: 'light' | 'dark';
   className?: string;

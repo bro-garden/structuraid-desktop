@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import type { Item, DropdownProps } from './types';
+import type { Item, SelectionListProps } from './types';
 
-const Dropdown = ({
+const SelectionList = ({
   items,
   className,
   selected,
   onSelect,
   color = 'light',
-}: DropdownProps) => {
+}: SelectionListProps) => {
   const [selectedItem, setSelectedItem] = useState<Item | undefined>(
     selected ? items.find((item) => item.id === selected) : undefined
   );
@@ -43,4 +43,4 @@ const Dropdown = ({
   );
 };
 
-export default Dropdown;
+export default SelectionList;

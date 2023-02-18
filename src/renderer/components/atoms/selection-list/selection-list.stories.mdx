@@ -3,9 +3,9 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { COLORS } from '../../../constants'
 
-import Dropdown from './dropdown';
+import SelectionList from './selection-list';
 
-<Meta title="Atoms/Dropdown" component={Dropdown} />
+<Meta title="Atoms/SelectionList" component={SelectionList} />
 
 export const Template = (args) => {
   return (
@@ -13,16 +13,16 @@ export const Template = (args) => {
       padding: '30px',
       background: args.color === 'dark' ? COLORS.PRIMARY : COLORS.BLUE_WHITE
     }}>
-      <Dropdown {...args} />
+      <SelectionList {...args} />
     </div>
   )
 };
 
-# Dropdown
+# SelectionList
 
 ##  Usage
 
-This is `Dropdown` atom, used to insert an selectable list of items in the UI.
+This is `SelectionList` atom, used to insert an selectable list of items in the UI.
 
 The component supports being used in a light or dark background, specifying the `color` prop:
 
