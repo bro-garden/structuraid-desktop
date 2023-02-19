@@ -229,14 +229,14 @@ Use this style when you are using this component in a short form with enough spa
 
 ## Controls
 
-Use the `selection` and `onSelect` props to use it as a controlled component.
+Use the `selection` and `onSelection` props to use it as a controlled component.
 
 <Canvas>
   <Story
     name="controlled"
     args={{
       selection: 'item_3',
-      onSelect: (item) => { alert(JSON.stringify(item)) },
+      onSelection: (item) => { alert(JSON.stringify(item)) },
       items: [{
         id: 'item_1',
         label: "Item 1",

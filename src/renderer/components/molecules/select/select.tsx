@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import { useState } from 'react';
 import { ChevronDownIcon } from '@primer/octicons-react';
 import { Input, SelectionList } from '../../atoms';
@@ -9,10 +11,11 @@ const Select = ({
   selection,
   className,
   items,
-  onSelect,
+  onSelection,
   disabled = false,
   as = 'one-liner',
   color = 'light',
+  ...props
 }: SelectProps) => {
   const [selectedItem, setSelectedItem] = useState<Item | undefined>(
     items.find((item) => item.id === selection)
@@ -24,7 +27,7 @@ const Select = ({
 
     setListVisible(false);
     setSelectedItem(item);
-    if (onSelect) onSelect(item);
+    if (onSelection) onSelection(item);
   };
 
   const toggleListVisibility = () => {
@@ -51,6 +54,7 @@ const Select = ({
         className={`w-full text-left ${color === 'dark' && 'text-blue-white'}`}
         value={selectedItem?.label || placeholder || 'Please Select an Option'}
         onClick={toggleListVisibility}
+        {...props}
       />
 
       {listVisible && (
