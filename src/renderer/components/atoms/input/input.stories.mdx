@@ -1,6 +1,7 @@
 <!-- Input.stories.mdx -->
 
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { AlertIcon } from '@primer/octicons-react';
 import { COLORS } from '../../../constants'
 
 import Input from './input';
@@ -124,3 +125,17 @@ Use this style when you are using this component in a short form with enough spa
     </Story>
 </Canvas>
 
+## Rendering an icon
+
+Pass an icon as React component through the `icon` prop. It will render an icon on the right of the input.
+
+<Canvas>
+    <Story
+      name="with icon"
+      args={{
+        icon: <AlertIcon size={12} />
+      }}
+    >
+      {Template.bind({})}
+    </Story>
+</Canvas>
