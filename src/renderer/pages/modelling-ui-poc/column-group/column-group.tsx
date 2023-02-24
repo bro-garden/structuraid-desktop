@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { WebGLRenderer, OrthographicCamera, Scene, Color } from 'three';
+import { WebGLRenderer, OrthographicCamera, Scene, Color, Group } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import invariant from 'tiny-invariant';
 import { InfiniteGrid, ModelGrid, Column } from 'renderer/three/components';
@@ -101,6 +101,34 @@ const ColumnSystem = () => {
     const columns = [
       {
         width: 2,
+        height: 2,
+        coorX: 15,
+        coorY: 17.5,
+        color: COLORS.NOTICE_SOFT_yellow,
+      },
+      {
+        width: 2,
+        height: 2,
+        coorX: 0,
+        coorY: 5,
+        color: COLORS.NOTICE_RED,
+      },
+      {
+        width: 1,
+        height: 3,
+        coorX: 0,
+        coorY: 10,
+        color: COLORS.NOTICE_RED,
+      },
+      {
+        width: 2,
+        height: 4,
+        coorX: 5,
+        coorY: 0,
+        color: COLORS.NOTICE_RED,
+      },
+      {
+        width: 2,
         height: 1,
         coorX: 10,
         coorY: 0,
@@ -108,10 +136,14 @@ const ColumnSystem = () => {
       },
     ];
     scene.add(modelGrid.object3D);
-    columns.forEach(({ width, height, coorX, coorY, color }) => {
-      const col = Column({ width, height, coorX, coorY, color });
-      scene.add(col);
+    const group = new Group();
+
+    columns.forEach(({ ...props }) => {
+      const col = Column({ ...props });
+      group.add(col);
     });
+    scene.add(group);
+
     function animate() {
       requestAnimationFrame(animate);
 
@@ -126,7 +158,7 @@ const ColumnSystem = () => {
 
   return (
     <div className="p-20 min-h-screen">
-      <h1 className="font-bold text-blue-500 text-6xl mb-6">column System</h1>
+      <h1 className="font-bold text-blue-500 text-6xl mb-6">column Group</h1>
 
       <div className="canvas-wrapper h-screen relative">
         <div className="css-wrapper w-full h-screen absolute left-0 top-0 z-10" />

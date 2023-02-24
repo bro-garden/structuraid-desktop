@@ -53,6 +53,12 @@ const ModellingUiPoc = () => {
         >
           Columns System
         </Link>
+        <Link
+          to={ROUTES.MODELLING_UI_POC.COLUMN_GROUP}
+          className="font-bold text-xl hover:text-blue-500 transition-all"
+        >
+          Columns Group
+        </Link>
       </ul>
     </div>
   );

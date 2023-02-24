@@ -8,3 +8,4 @@ export { default as GridSystem } from './grid-system';
 export { default as Ucs } from './ucs';
 export { default as Columns2D } from './columns-2d';
 export { default as ColumnSystem } from './column-system';
+export { default as ColumnGroup } from './column-group';

@@ -8,6 +8,7 @@ import {
   ProceduralText,
   GridSystem,
   ColumnSystem,
+  ColumnGroup,
   Ucs,
   Columns2D,
 } from 'renderer/pages/modelling-ui-poc';
@@ -46,6 +47,10 @@ const AppRouter = () => {
         <Route
           path={ROUTES.MODELLING_UI_POC.COLUMN_SYSTEM}
           element={<ColumnSystem />}
+        />
+        <Route
+          path={ROUTES.MODELLING_UI_POC.COLUMN_GROUP}
+          element={<ColumnGroup />}
         />
       </Routes>
     </Router>

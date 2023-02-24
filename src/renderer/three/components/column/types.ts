@@ -3,4 +3,5 @@ export interface ColumnOptions {
   height: number;
   coorX: number;
   coorY: number;
+  color: string;
 }
