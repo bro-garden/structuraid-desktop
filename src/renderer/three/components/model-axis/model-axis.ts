@@ -100,7 +100,7 @@ class ModelAxis {
       startPosition,
       endPosition,
     ]);
-    const material = new LineBasicMaterial({ color: COLORS.GRAY40 });
+    const material = new LineBasicMaterial({ color: COLORS.GRAY_SOFT });
 
     const line = new Line(geometry, material);
     return line;
