@@ -4,7 +4,6 @@ import { BoxGeometry, MeshBasicMaterial, Mesh } from 'three';
 import { ColumnOptions } from './types';
 
 const Column = ({ width, height, coorX, coorY, color }: ColumnOptions) => {
-  console.log('the column color', color);
   const geometry = new BoxGeometry(width, height, 0);
   const material = new MeshBasicMaterial({ color });
   const square = new Mesh(geometry, material);
