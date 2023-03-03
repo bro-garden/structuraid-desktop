@@ -1,0 +1,22 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { HeartFillIcon } from '@primer/octicons-react'
+
+<Meta title="Miscelaneus/Icons" />
+
+# Icons
+
+We are adopting [GitHub's Octicons](https://primer.style/design/foundations/icons), they can be consumed from the [https://www.npmjs.com/package/@primer/octicons-react](https://www.npmjs.com/package/@primer/octicons-react) library as react components.
+For example:
+
+export const Template = (args) => <HeartFillIcon {...args} />
+
+<Canvas withSource="open">
+    <Story
+      name="hearth"
+      args={{
+        size: 24
+      }}
+    >
+      {Template.bind({})}
+    </Story>
+</Canvas>

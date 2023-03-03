@@ -1,0 +1,261 @@
+<!-- Select.stories.mdx -->
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { COLORS } from '../../../constants'
+
+import Select from './select';
+
+<Meta title="Molecules/Select" component={Select} />
+
+export const Template = (args) => {
+  return (
+    <div style={{
+      padding: '30px',
+      height: '250px',
+      background: args.color === 'dark' ? COLORS.PRIMARY : COLORS.BLUE_WHITE
+    }}>
+      <Select {...args} />
+    </div>
+  )
+};
+
+# Select Field
+
+##  Usage
+
+This is the `Select` molecule. It is a controlled component and it receives all the props that a normal Select would receive, plus the following ones.
+There are 2 styles for this component, indicated by the `as` prop:
+
+- `one-liner`
+- `rounded`
+
+Also the component supports being used in a light or dark background, specifying the `color` prop:
+
+- `light`
+- `dark`
+
+### One Liner Style
+
+This is the default style, it is compact, use it when the component is being used along with other Selects in a long form
+
+<Canvas withSource="open">
+  <Story
+    name="one-liner-light"
+    args={{
+      as: 'one-liner',
+      color: 'light',
+      placeholder: 'Placeholder',
+      disabled: false,
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="one-liner-light-disabled"
+    args={{
+      as: 'one-liner',
+      placeholder: 'Disabled',
+      disabled: true,
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="one-liner-dark"
+    args={{
+      as: 'one-liner',
+      color: 'dark',
+      placeholder: 'Placeholder',
+      disabled: false,
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+      {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Rounded Style
+
+Use this style when you are using this component in a short form with enough space
+
+<Canvas withSource="open">
+  <Story
+    name="rounded-light"
+    args={{
+      as: 'rounded',
+      color: 'light',
+      placeholder: 'Placeholder',
+      disabled: false,
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="rounded-light-disabled"
+    args={{
+      as: 'rounded',
+      color: 'light',
+      placeholder: 'Placeholder',
+      disabled: true,
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withSource="open">
+  <Story
+    name="rounded-dark"
+    args={{
+      as: 'rounded',
+      color: 'dark',
+      placeholder: 'Placeholder',
+      disabled: false,
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Controls
+
+Use the `selection` and `onSelection` props to use it as a controlled component.
+
+<Canvas withSource="open">
+  <Story
+    name="controlled"
+    args={{
+      selection: 'item_3',
+      onSelection: (item) => { alert(JSON.stringify(item)) },
+      items: [{
+        id: 'item_1',
+        label: "Item 1",
+        value: 1
+      }, {
+        id: 'item_2',
+        label: "Item 2",
+        value: 2
+      }, {
+        id: 'item_3',
+        label: "Item 3",
+        value: 3
+      }, {
+        id: 'item_4',
+        label: "Item 4",
+        value: 4
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
