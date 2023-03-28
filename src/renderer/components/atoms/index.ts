@@ -5,3 +5,4 @@ export { default as SelectionList } from './selection-list';
 export { default as Toggle } from './toggle';
 export * from './button';
 export { default as Checkbox } from './checkbox';
+export { default as Radio } from './radio';

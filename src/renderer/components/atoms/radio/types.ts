@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, InputHTMLAttributes } from 'react';
 
 export interface RadioProps {
   id?: string;
@@ -6,4 +6,6 @@ export interface RadioProps {
   onChange?: (checked: boolean) => void;
   children?: ReactNode;
   disabled?: boolean;
+  name?: string;
+  value?: string;
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CheckIcon } from '@primer/octicons-react';
 import getRandomHex from '../../../utils/get-random-hex';
 import type { CheckboxProps } from './types';
@@ -12,6 +12,10 @@ const Checkbox = ({
 }: CheckboxProps) => {
   const [value, setValue] = useState<boolean>(checked || false);
   const inputId = id || `checkbox-${getRandomHex(16)}`;
+
+  useEffect(() => {
+    setValue(checked || false);
+  }, [checked]);
 
   const handleChange = () => {
     const newValue = !value;
