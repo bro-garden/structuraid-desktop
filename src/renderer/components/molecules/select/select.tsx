@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDownIcon } from '@primer/octicons-react';
 import { Input, SelectionList } from '../../atoms';
 
@@ -21,6 +21,10 @@ const Select = ({
     items.find((item) => item.id === selection)
   );
   const [listVisible, setListVisible] = useState<boolean>(false);
+
+  useEffect(() => {
+    setSelectedItem(items.find((item) => item.id === selection));
+  }, [selection, items]);
 
   const handleSelect = (item: Item | Item[]) => {
     if (Array.isArray(item)) return;
