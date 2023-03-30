@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Item, SelectionListProps } from './types';
 
 const loadSelectedItems = (items: Item[], selection: string | string[]) => {
@@ -24,6 +24,12 @@ const SelectionList = ({
   const [selectedItems, setSelectedItems] = useState<Item[] | undefined>(
     selection ? loadSelectedItems(items, selection) : undefined
   );
+
+  useEffect(() => {
+    setSelectedItems(
+      selection ? loadSelectedItems(items, selection) : undefined
+    );
+  }, [items, selection]);
 
   let styles = 'flex flex-col rounded shadow-md-center py-2 text-xs';
   if (color === 'light') {

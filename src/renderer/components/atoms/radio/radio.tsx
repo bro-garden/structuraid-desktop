@@ -1,27 +1,26 @@
 import { useState, useEffect } from 'react';
-import { CheckIcon } from '@primer/octicons-react';
 import getRandomHex from '../../../utils/get-random-hex';
-import type { CheckboxProps } from './types';
+import type { RadioProps } from './types';
 
-const Checkbox = ({
+const Radio = ({
   checked,
   id,
   onChange,
   children,
   disabled,
-}: CheckboxProps) => {
-  const [value, setValue] = useState<boolean>(checked || false);
+  name,
+  value,
+}: RadioProps) => {
+  const [isChecked, setIsChecked] = useState<boolean>(checked || false);
   const inputId = id || `checkbox-${getRandomHex(16)}`;
 
   useEffect(() => {
-    setValue(checked || false);
+    setIsChecked(checked || false);
   }, [checked]);
 
   const handleChange = () => {
-    const newValue = !value;
-
-    setValue(newValue);
-    if (onChange) onChange(newValue);
+    setIsChecked(true);
+    if (onChange) onChange(true);
   };
 
   return (
@@ -33,27 +32,28 @@ const Checkbox = ({
       `}
     >
       <input
-        type="checkbox"
+        type="radio"
         id={inputId}
         className="hidden"
-        checked={value}
+        checked={isChecked}
         onChange={handleChange}
         disabled={disabled}
+        name={name}
+        value={value}
       />
 
       <span
         className={`
-          w-4 h-4 rounded-sm border flex items-center justify-center transition-all 
+          w-4 h-4 rounded-full border flex items-center justify-center transition-all
           ${disabled ? 'bg-gray-soft border-gray-dark-soft' : 'bg-blue-white'}
-          ${!disabled && value ? 'border-soft-blue' : 'border-secondary'}
+          ${!disabled && isChecked ? 'border-soft-blue' : 'border-secondary'}
         `}
       >
-        <CheckIcon
-          size={12}
+        <span
           className={`
-            transition-all
-            ${value ? 'visible' : 'invisible'} 
-            ${disabled ? 'text-gray-dark-soft' : 'text-soft-blue'}
+            block w-2 h-2 rounded-full
+            ${isChecked ? 'visible' : 'invisible'}
+            ${disabled ? 'bg-gray-dark-soft' : 'bg-soft-blue'}
           `}
         />
       </span>
@@ -63,4 +63,4 @@ const Checkbox = ({
   );
 };
 
-export default Checkbox;
+export default Radio;

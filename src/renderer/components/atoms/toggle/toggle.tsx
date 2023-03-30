@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import type { ToggleProps } from './types';
 
 const Toggle = ({ checked, onChange, disabled = false }: ToggleProps) => {
   const [value, setValue] = useState<boolean>(checked || false);
+
+  useEffect(() => {
+    setValue(checked || false);
+  }, [checked]);
 
   const handleClick = () => {
     const newValue = !value;
