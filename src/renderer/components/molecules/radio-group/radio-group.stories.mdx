@@ -1,0 +1,104 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { COLORS } from '../../../constants'
+
+import RadioGroup from './radio-group';
+
+<Meta title="Molecules/RadioGroup" component={RadioGroup} />
+
+export const Template = (args) => {
+  return (
+    <div style={{
+      padding: '30px',
+      background: args.color === 'dark' ? COLORS.PRIMARY : COLORS.BLUE_WHITE
+    }}>
+      <RadioGroup {...args} />
+    </div>
+  )
+};
+
+# RadioGroup
+
+This is the `RadioGroup` molecule. This component is a wrapper around the [`Radio` atom](/docs/atoms-radio--default-story), it creates a list of radio inputs and allows the user to choose one of them.
+
+##  Usage
+
+The `items` prop is mandatory, it's an array of objects that specify the details required to render the list of radio inputs. You can also pass a `name` prop, which will be passed to the `name` attribute of each HTML `input` element. This would be useful for accessibility.
+
+<Canvas>
+  <Story
+    name="default"
+    args={{
+      name: 'color',
+      items: [{
+        id: "item-1",
+        label: "Yellow",
+        value: "yellow"
+      }, {
+        id: "item-2",
+        label: "Blue",
+        value: "blue"
+      }, {
+        id: "item-3",
+        label: "Red",
+        value: "red"
+      }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+The `direction` prop can be used to have the options listed on a `"row"` or on a `"column"`. Default value is `"column"`
+
+<Canvas>
+  <Story
+    name="row-direction"
+    args={{
+      name: 'color',
+      items: [{
+        id: "item-11",
+        label: "Yellow",
+        value: "yellow"
+      }, {
+        id: "item-22",
+        label: "Blue",
+        value: "blue"
+      }, {
+        id: "item-33",
+        label: "Red",
+        value: "red"
+      }],
+      direction: "row"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+You can control the component by using the `selection` and `onChange` props. `selection` must be the id of the item that must appear selected, and `onChange` is a callback function that will receive the selected item object as argument
+
+<Canvas>
+  <Story
+    name="controlled"
+    args={{
+      name: 'color',
+      items: [{
+        id: "item-111",
+        label: "Yellow",
+        value: "yellow"
+      }, {
+        id: "item-222",
+        label: "Blue",
+        value: "blue"
+      }, {
+        id: "item-333",
+        label: "Red",
+        value: "red"
+      }],
+      selection: "item-333",
+      onChange: (selectedItem) => alert(JSON.stringify(selectedItem))
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

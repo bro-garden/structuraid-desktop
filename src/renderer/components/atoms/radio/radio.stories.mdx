@@ -1,0 +1,66 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { COLORS } from '../../../constants'
+
+import Radio from './radio';
+
+<Meta title="Atoms/Radio" component={Radio} />
+
+export const Template = (args) => {
+  return (
+    <div style={{
+      padding: '30px',
+      background: args.color === 'dark' ? COLORS.PRIMARY : COLORS.BLUE_WHITE
+    }}>
+      <Radio {...args} />
+    </div>
+  )
+};
+
+# Radio Field
+
+##  Usage
+
+This is the `Radio` atom.
+
+<Canvas>
+  <Story
+    name="default"
+    args={{
+      children: "Click me"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Use the `checked` and `onChange` props to control it
+
+<Canvas>
+  <Story
+    name="controlled"
+    args={{
+      checked: true,
+      onChange: (value) => alert(value),
+      children: "Click me"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Use the `disabled` prop to make it unusable.
+
+<Canvas>
+  <Story
+    name="disabled"
+    args={{
+      disabled: true,
+      children: "Click me",
+      checked: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Radio inputs are more interesting when used in group to provide a list of options and let the user pick only one of those options. See the [`RadioGroup` molecule](/docs/molecules-radiogroup--default-story) for this use case
