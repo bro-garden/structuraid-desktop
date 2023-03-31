@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import {
   SkipIcon,
   AlertIcon,
@@ -39,13 +40,36 @@ const BG_COLORS_MAPPER = {
   },
 };
 
-const Notification = ({ message, type, children }: NotificationProps) => {
+const Notification = ({
+  message,
+  type,
+  children,
+  open: defaultOpen = true,
+  onVisibilityChange,
+}: NotificationProps) => {
   const Icon = ICON_MAPPER[type];
   const bgColorScheme = BG_COLORS_MAPPER[type];
+  const [open, setOpen] = useState(defaultOpen);
+
+  useEffect(() => {
+    setOpen(defaultOpen);
+  }, [defaultOpen]);
+
+  const handleClose = () => {
+    setOpen(false);
+    if (onVisibilityChange) onVisibilityChange(false);
+  };
 
   return (
     <div
-      className={`flex w-full ${bgColorScheme.soft} h-12 items-center gap-4`}
+      className={`
+        flex items-center gap-4
+        transition-all
+        ${bgColorScheme.soft}
+        ${
+          open ? 'w-full h-12 opacity-100' : 'w-0 h-0 overflow-hidden opacity-0'
+        }
+      `}
     >
       <div
         className={`${bgColorScheme.dark} w-12 h-12 flex flex-grow-0 flex-shrink-0 justify-center items-center`}
@@ -62,7 +86,7 @@ const Notification = ({ message, type, children }: NotificationProps) => {
       </Text>
 
       {children && (
-        <div className="flex items-center flex-grow-0 flex-shrink-0">
+        <div className="flex items-center gap-3 flex-grow-0 flex-shrink-0">
           {children}
         </div>
       )}
@@ -70,6 +94,7 @@ const Notification = ({ message, type, children }: NotificationProps) => {
       <button
         type="button"
         className="block w-10 h-10 hover:opacity-50 transition-all flex-grow-0 flex-shrink-0"
+        onClick={handleClose}
       >
         <XIcon size={16} className="text-primary" />
       </button>

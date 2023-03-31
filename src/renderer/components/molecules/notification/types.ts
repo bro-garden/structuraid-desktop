@@ -6,4 +6,6 @@ export interface NotificationProps {
   message: string;
   type: NotificationType;
   children?: ReactNode;
+  open?: boolean;
+  onVisibilityChange?: (open: boolean) => void;
 }

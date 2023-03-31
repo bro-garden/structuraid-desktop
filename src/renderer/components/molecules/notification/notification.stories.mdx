@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { COLORS } from '../../../constants'
 
@@ -93,6 +94,13 @@ export const CustomActionsTemplate = (args) => {
         >
           Accept
         </Button>
+        <Button
+          as="secondary"
+          type="submit"
+          variant="small"
+        >
+          Deny
+        </Button>
       </Notification>
     </div>
   )
@@ -110,3 +118,36 @@ export const CustomActionsTemplate = (args) => {
   </Story>
 </Canvas>
 
+### Controlled from Outside
+
+The notification visibility state can be controlled from an outside component using the `open` and `onVisibilityChange` props.
+
+export const ControlledTemplate = (args) => {
+  const [open, setOpen] = useState(false)
+  const handleClose = (newOpen) => setOpen(newOpen)
+  return (
+    <div style={{
+      padding: '30px',
+      background: args.color === 'dark' ? COLORS.PRIMARY : COLORS.BLUE_WHITE
+    }}>
+      <Notification {...args} open={open} onVisibilityChange={handleClose} />
+      <div style={{paddingTop: "20px"}}>
+        <Button onClick={() => setOpen(!open)}>
+          Click me
+        </Button>
+      </div>
+    </div>
+  )
+};
+
+<Canvas>
+  <Story
+    name="controlled"
+    args={{
+      type: 'success',
+      message: 'Success Notification'
+    }}
+  >
+    {ControlledTemplate.bind({})}
+  </Story>
+</Canvas>
