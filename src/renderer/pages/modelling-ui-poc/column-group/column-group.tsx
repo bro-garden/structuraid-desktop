@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
-import { WebGLRenderer, OrthographicCamera, Scene, Color, Group } from 'three';
+import { WebGLRenderer, OrthographicCamera, Scene, Color } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import invariant from 'tiny-invariant';
-import { InfiniteGrid, ModelGrid, Column } from 'renderer/three/components';
+import {
+  InfiniteGrid,
+  ModelGrid,
+  ColumnsGroup,
+} from 'renderer/three/components';
 import { CSS3DRenderer } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import { COLORS } from 'renderer/constants';
 
-const ColumnSystem = () => {
+const ColumnGroup = () => {
   useEffect(() => {
     const webglContainerEl = document.querySelector('.webgl-wrapper');
     invariant(webglContainerEl, 'could not find container tag');
@@ -136,13 +140,8 @@ const ColumnSystem = () => {
       },
     ];
     scene.add(modelGrid.object3D);
-    const group = new Group();
-
-    columns.forEach(({ ...props }) => {
-      const col = Column({ ...props });
-      group.add(col);
-    });
-    scene.add(group);
+    const columnGroup = ColumnsGroup({ columns });
+    scene.add(columnGroup);
 
     function animate() {
       requestAnimationFrame(animate);
@@ -168,4 +167,4 @@ const ColumnSystem = () => {
   );
 };
 
-export default ColumnSystem;
+export default ColumnGroup;
