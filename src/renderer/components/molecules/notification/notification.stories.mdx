@@ -1,0 +1,112 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { COLORS } from '../../../constants'
+
+import Notification from './notification';
+import { Button } from '../../atoms';
+
+<Meta title="Molecules/Notification" component={Notification} />
+
+export const Template = (args) => {
+  return (
+    <div style={{
+      padding: '30px',
+      background: args.color === 'dark' ? COLORS.PRIMARY : COLORS.BLUE_WHITE
+    }}>
+      <Notification {...args} />
+    </div>
+  )
+};
+
+# Notification
+
+This is the `Notification` molecule. It can be used to render a notification message on the UI. It can be an error, an alert, a success notification or some information.
+
+##  Usage
+
+The `type` and `message` props are required.
+Use the `type` prop to specify the notification type. It can be `"error"`, `"warning"`, `"success"` or `"info"`
+Use the `message` prop to specify the notification message.
+
+<Canvas>
+  <Story
+    name="error"
+    args={{
+      type: 'error',
+      message: 'Error Notification'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="warning"
+    args={{
+      type: 'warning',
+      message: 'Warning Notification'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="success"
+    args={{
+      type: 'success',
+      message: 'Success Notification'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="info"
+    args={{
+      type: 'info',
+      message: 'Info Notification'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Custom Actions
+
+The `Notification` component can receive `children`, they will be rendered at the right of the message and can be used to define any custom actions that can be performed by the user
+
+export const CustomActionsTemplate = (args) => {
+  return (
+    <div style={{
+      padding: '30px',
+      background: args.color === 'dark' ? COLORS.PRIMARY : COLORS.BLUE_WHITE
+    }}>
+      <Notification {...args}>
+        <Button
+          as="secondary"
+          type="submit"
+          variant="small"
+        >
+          Accept
+        </Button>
+      </Notification>
+    </div>
+  )
+};
+
+<Canvas>
+  <Story
+    name="custom-actions"
+    args={{
+      type: 'error',
+      message: 'Error Notification'
+    }}
+  >
+    {CustomActionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
