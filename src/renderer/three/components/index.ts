@@ -8,3 +8,5 @@ export { default as InfiniteGrid } from './infinte-grid';
 export { default as ModelAxisLabel } from './model-axis-label';
 export { default as ModelAxis } from './model-axis';
 export { default as ModelGrid } from './model-grid';
+export { default as Column } from './column';
+export { default as ColumnsGroup } from './column-group';
