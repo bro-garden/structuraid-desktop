@@ -1,10 +1,9 @@
+import Unit from '../unit';
 import type { StressUnit } from './types';
 
-class Stress {
-  private stdValue: number;
-
+class Stress extends Unit {
   constructor(value: number, unit: StressUnit) {
-    this.stdValue = Stress.#parseToStd(value, unit);
+    super(Stress.#parseToStd(value, unit));
   }
 
   MPa() {

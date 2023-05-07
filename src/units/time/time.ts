@@ -1,10 +1,9 @@
+import Unit from '../unit';
 import type { TimeUnit } from './types';
 
-class Time {
-  private stdValue: number;
-
+class Time extends Unit {
   constructor(value: number, unit: TimeUnit) {
-    this.stdValue = Time.#parseToStd(value, unit);
+    super(Time.#parseToStd(value, unit));
   }
 
   ms() {

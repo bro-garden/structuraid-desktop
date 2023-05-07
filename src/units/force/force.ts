@@ -1,42 +1,41 @@
+import Unit from '../unit';
 import type { ForceUnit } from './types';
 
-class Force {
-  private stdUnit: number;
-
+class Force extends Unit {
   constructor(value: number, unit: ForceUnit) {
-    this.stdUnit = Force.#parseToStd(value, unit);
+    super(Force.#parseToStd(value, unit));
   }
 
   N() {
-    return this.stdUnit;
+    return this.stdValue;
   }
 
   kN() {
-    return this.stdUnit / 1000;
+    return this.stdValue / 1000;
   }
 
   lbf() {
-    return this.stdUnit / 4.448;
+    return this.stdValue / 4.448;
   }
 
   kip() {
-    return this.stdUnit / 4448.222;
+    return this.stdValue / 4448.222;
   }
 
   kgf() {
-    return this.stdUnit / 9.807;
+    return this.stdValue / 9.807;
   }
 
   MN() {
-    return this.stdUnit / 1000000;
+    return this.stdValue / 1000000;
   }
 
   tonf() {
-    return this.stdUnit / 9807;
+    return this.stdValue / 9807;
   }
 
   set(value: number, unit: ForceUnit) {
-    this.stdUnit = Force.#parseToStd(value, unit);
+    this.stdValue = Force.#parseToStd(value, unit);
   }
 
   static #parseToStd(value: number, unit: ForceUnit) {

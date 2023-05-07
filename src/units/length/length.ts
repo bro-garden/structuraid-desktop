@@ -1,10 +1,9 @@
+import Unit from '../unit';
 import type { LengthUnit } from './types';
 
-class Length {
-  private stdValue: number;
-
+class Length extends Unit {
   constructor(value: number, unit: LengthUnit) {
-    this.stdValue = Length.#parseToStd(value, unit);
+    super(Length.#parseToStd(value, unit));
   }
 
   mm() {
