@@ -36,10 +36,11 @@ const ColumnGroup = () => {
     function hoverPointer() {
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObjects(scene.children);
-
       for (let i = 0; i < intersects.length; i += 1) {
         const intObject = intersects[i].object as any;
-        intObject.material.color?.set(COLORS.NOTICE_SOFT_yellow);
+        if (intObject.name === 'column') {
+          intObject.material.color?.set(COLORS.NOTICE_SOFT_yellow);
+        }
       }
     }
 
@@ -52,6 +53,7 @@ const ColumnGroup = () => {
       const myCoordy = event.clientY - clientRects.y;
       mouse.x = (myCoordx / clientRects.width) * 2 - 1;
       mouse.y = -(myCoordy / clientRects.height) * 2 + 1;
+      hoverPointer();
       return null;
     }
 
@@ -173,14 +175,13 @@ const ColumnGroup = () => {
     const columnGroup = ColumnsGroup({ columns });
     scene.add(columnGroup);
 
-    window.addEventListener('mousemove', onPointerMove, false);
+    window.addEventListener('click', onPointerMove, false);
     function animate() {
       requestAnimationFrame(animate);
       controls.update();
       // cssControls.update();
       // cssRenderer.render(scene, camera);
       renderer.render(scene, camera);
-      hoverPointer();
     }
     animate();
   }, []);

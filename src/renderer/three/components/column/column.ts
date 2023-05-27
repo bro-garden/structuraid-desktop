@@ -7,6 +7,7 @@ const Column = ({ width, height, coorX, coorY, color }: ColumnOptions) => {
   const geometry = new BoxGeometry(width, height, 0);
   const material = new MeshBasicMaterial({ color });
   const square = new Mesh(geometry, material);
+  square.name = 'column';
   square.position.set(coorX, coorY, 0);
 
   return square;
