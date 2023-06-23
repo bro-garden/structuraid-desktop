@@ -9,6 +9,7 @@ import {
   GridSystem,
   ColumnSystem,
   ColumnGroup,
+  ColumnSelect,
   Ucs,
   Columns2D,
 } from 'renderer/pages/modelling-ui-poc';
@@ -51,6 +52,10 @@ const AppRouter = () => {
         <Route
           path={ROUTES.MODELLING_UI_POC.COLUMN_GROUP}
           element={<ColumnGroup />}
+        />
+        <Route
+          path={ROUTES.MODELLING_UI_POC.COLUMN_SELECT}
+          element={<ColumnSelect />}
         />
       </Routes>
     </Router>
